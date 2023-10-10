@@ -1,0 +1,55 @@
+.card {
+    box-shadow: 1px, 1px, 1px, 1px, white;
+    width: 400%;
+    height: 900;
+    padding: 1px;
+    box-shadow: 10px, 8px, 7px, 9px, rgb(201, 199, 67);
+    background-color:rgb(200, 255, 47);
+    margin: 5px;
+    border-radius: 3%
+}
+img {
+    width: 445px;
+    height: 400px;
+    padding: 1px;
+    border-radius: 3%;
+    background-color: white;
+    
+}
+.card-box{
+    display: flex;
+    padding: 30px;
+}
+.flex-box{
+    display: flex;
+    margin: 25px;
+    justify-content: space-around;
+}
+.enrol {
+    width:80px;
+    height: 30px;
+    background-color:goldenrod;
+    border-radius: 10%;
+}
+.money{
+    width:80px;
+    height: 30px;
+    border-radius: 10%;
+    background-color: red;
+    
+
+}
+.enrol:hover {
+    color: green;
+    border-color: green;
+    background-color: white;
+}
+.money:hover {
+    color: red;
+    border-color: red;
+    background-color:white;
+}
+.card-box :hover{
+position: relative;
+left: -50px;
+}

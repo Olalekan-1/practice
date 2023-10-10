@@ -1,0 +1,61 @@
+form {
+    background-color:rgba(255, 255, 255, 0.651);
+    height: 450px;
+   padding: 15px;
+   border:1px solid #ccc;
+   margin: 20px;
+
+}
+
+.flex-container {
+    display: flex;
+    margin-left: 400px;
+}
+.flex-container >div {
+    margin: 20px;
+}
+.back-ground{
+    background-color:  rgb(14, 2, 71);
+    height: 80px;
+    width: 1365px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+.icon{
+    border:1px solid blue;
+    background-color: blue;
+    color: white;
+    height: 22px;
+    padding:0px 7px;
+}
+.hnm{
+    
+    width:0;
+    height: 0;
+    border-top: 100px solid rgb(14, 2, 71);
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+   
+    
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+.get{
+    text-align: center;
+    
+}
+
+a {
+    margin: 20px;
+}
+img {
+    height: 500px;
+    width: 250px;
+    margin-top: 15px;
+}

@@ -1,0 +1,7 @@
+.leftchat img {
+    border-radius: 5%;
+    height: 50px;
+    width: 50px;
+    margin-left: 4vw;
+    float: left;
+}

@@ -1,0 +1,61 @@
+CanvasEX:
+
+<CanvasEX>:
+    canvas:
+        Line:
+            points: (self.width/2, 0, self.width/2, self.height)
+            width: 2
+
+        Line:
+            points: (0, self.height/2, self.width, self.height/2)
+            width: 2
+
+
+<WidgetEx>:
+    cols: 3
+
+    ToggleButton:
+        text: 'OFF'
+        on_state: root.on_state_pressed(self)
+    Button:
+        text: "Count"
+        on_press: root.on_pressed()
+
+    Label:
+        text: root.my_text
+        font_name: "fonts/Lcd.ttf"
+        font_size: "100dp"
+
+    Slider:
+        id: slider
+        orientation: "vertical"
+        min: 0
+        max: 100
+        value: 50
+        disabled: not my_switch.active
+
+
+    Switch:
+        id : my_switch
+        active: True
+
+
+
+    Label:
+        text: str(int(slider.value))
+
+
+
+
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "40dp", "40dp"
+        pos: "50dp", "50dp"
+
+    Label:
+        text: "Hello World!"
+        size: "70dp", "120dp"
+        pos: "90dp", "100dp"
+        color: 1, 0.4, 0.2, .1

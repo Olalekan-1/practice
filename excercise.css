@@ -1,0 +1,129 @@
+.body {
+    background-color: #6767;
+    margin: 0;
+}
+
+
+.card {
+    display: flex;
+}
+
+img{
+    width:500px;
+}
+
+.tooltip {
+    position: relative;
+   
+
+}
+
+.inside{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 120px;
+    background-color: black;
+    color: white;
+    display: inline;
+    margin-left: 60px;
+}
+
+.tooltip:hover .inside {
+    visibility: visible;
+    margin-left: 10px;
+}
+
+.inside::after {content: " ";
+position: absolute;
+right: 100%; /* At the bottom of the tooltip */
+top: 50%;
+margin-top: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: red transparent transparent transparent;
+}
+
+
+.container{
+
+    width:50%;
+    position: relative;
+    height: 700px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    left:0;
+    right:0;
+    background-color: blue;
+    visibility: hidden;
+    transition: 7s;
+    height: 0;
+
+}
+
+.container:hover .overlay{
+
+    visibility: visible;
+    height: 100%;
+    bottom: 0;
+    opacity:0.3;
+}
+
+.image{
+    display: block;
+    width: 100%;
+    height:100%;
+}
+
+.text {
+    position: absolute;
+    background-color: #eee;
+
+}
+
+.test{
+    position: relative;
+    width: 70%;
+    background-color: red;
+}
+
+.imge{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.letter {
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+right: 100%;
+    background-color:pink;
+    visibility: hidden;
+    transition: 7s;
+}
+
+.test:hover .letter{
+
+    visibility: visible;
+    right: 0;
+    opacity: 0.3;
+}
+
+.test:hover .imge{
+    opacity: 0.3;
+}
+
+/* .mask {  
+    width: 500px;
+    height: 500px;
+    background-image: url(../practice/image/light.jpg);
+    -webkit-mask-image: url(../practice/image/yemat.png);
+
+} */
+
+

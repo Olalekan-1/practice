@@ -1,0 +1,178 @@
+ th, td  {
+
+    border: 1px dashed white;
+     border-collapse: collapse; 
+}
+
+th, td {
+    /* background-color: blue; */
+    padding: 15px;
+    /* border-spacing: 30px; */
+
+}
+
+table {
+    width :100%;
+    height: 200px;
+    border-spacing: 10px;
+}
+
+tr:nth-child(even){
+    background-color: aqua;
+}
+
+tr:nth-child(odd){
+    background-color: blueviolet;
+}
+
+nav  a{
+ margin:.5vw;
+ text-decoration: none;
+ color: white;
+ 
+}
+
+
+nav {
+    width: 100%;
+    height: 1.5vh;
+    padding: 1vw;
+}
+
+.float {
+    float:right;
+}
+
+
+.pawpaw {
+    clear: right;
+    
+}
+
+ul {
+    list-style: none;
+    display: block;
+    margin-top: 0;
+    padding: 0;
+    width:120px;
+    border: 1px solid;
+    position: sticky;
+    height: 100vh;
+    overflow: auto;
+    background-color: azure;
+    border: 1px solid;
+    top: 40px;
+}
+
+li a {
+
+    text-decoration: none;
+    display: block;
+    padding-top: 6px;
+    
+    
+}
+
+
+
+ul li:hover{
+    background-color: green;
+
+}
+
+li a:hover{
+    background-color: pink;
+}
+
+li {
+    border-bottom:  1px solid;
+    text-align: center;
+}
+
+li a.active {
+    background-color: #04AA6D;
+    color: white;}
+
+
+    .dropdown {
+
+        margin-left: 600px;
+        position: relative;
+        display: inline-block;
+    
+    }
+
+
+
+        /* .dropbotton{
+        
+
+        } */
+
+
+        .drop-content {
+            position: absolute;
+            display: none;
+            z-index: 1;
+        }
+
+        .drop-content a {
+
+            display: block;
+        }
+        
+        
+        .dropdown:hover .drop-content {
+            display: block;
+          }
+          
+
+          .all {
+            float: right;
+            position: relative;
+          }
+
+          .link{
+            display: none;
+            position: absolute;
+          }
+
+          .link a {
+
+            display: block;
+          }
+
+          .all:hover .link {
+display: block;
+
+
+          }
+
+          .border{
+            background-color: #aa3304;
+            display: block;
+            margin: auto;
+            width: 50%;
+            border: 6px solid;
+            height: 40vh;
+            border-image-source: url("../nitda-practice/image/20220211_212735\ \(3\).jpg");
+             border-image-repeat: repeat; 
+            border-image-outset: 10px;
+          }
+
+         /*  body{
+            background-image: url(../nitda-practice/image/light.jpg), url(../nitda-practice/image/flower.png);
+            background-position: right bottom, left top ;
+            background-repeat: no-repeat, repeat;
+            opacity: .2;
+          } */
+
+
+          .gradient{
+            margin: auto;
+            width: 50%;
+            padding:30px;
+            background-color: #4c04aa;
+            background-image: linear-gradient(#4c04aa, pink);
+            height: 100px;
+          }
