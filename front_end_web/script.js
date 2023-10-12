@@ -37,6 +37,14 @@ function active_btn()
 
 } */
 
+function theme_ctrl(){
+    const themeBtn = document.querySelector(".theme-control")
+    themeBtn.addEventListener("click", ()=>{
+        let element = document.body
+        element.classList.toggle("visible")
+    })
+}
+
 function page_trasit(){
     for (let i = 0; i < sectbtn.length; i++)
     {
@@ -63,6 +71,8 @@ function page_trasit(){
          element.classList.add('active');
         }
     }) 
+
+    theme_ctrl()
     
 }
 
