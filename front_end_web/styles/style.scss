@@ -306,7 +306,7 @@ a {
         text-transform: uppercase;
         font-size: 4rem;
         font-weight: 700;
-        color: var(wh);
+        color: var(--color-white);
 
         span {
             color: var(--color-secondary);
@@ -846,3 +846,5 @@ a {
         transform: translateY(-3px);
     }
 }
+
+@import "./media";

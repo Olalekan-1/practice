@@ -260,7 +260,7 @@ a {
   text-transform: uppercase;
   font-size: 4rem;
   font-weight: 700;
-  color: var(wh);
+  color: var(--color-white);
 }
 .the-title h2 span {
   color: var(--color-secondary);
@@ -701,4 +701,101 @@ a {
 }
 .theme-control:active {
   transform: translateY(-3px);
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    padding: 0;
+    min-height: 100vh !important;
+    overflow: scroll;
+  }
+  .the-title h2 {
+    font-size: 2.5rem;
+  }
+  .the-title h2 span {
+    font-size: 3rem;
+  }
+  .the-title h2 .bg-text {
+    font-size: 3.5rem;
+  }
+  .header-content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .header-content .left-header .h-shape {
+    display: none;
+  }
+  .header-content .right-header {
+    grid-row: 1;
+    padding: 2rem 5rem;
+    margin-right: 2rem;
+  }
+  .header-content .right-header h1 {
+    font-size: 2rem;
+  }
+  .controls {
+    flex-direction: initial;
+    top: auto;
+    bottom: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-60%);
+  }
+  .controls .control {
+    margin-bottom: 1.5rem;
+  }
+  .theme-control {
+    right: 2.5rem;
+  }
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  .about-content .right-content {
+    grid-template-columns: 1fr;
+    padding-top: 2.5rem;
+  }
+  .about-content .left-content {
+    padding-right: 0;
+  }
+  .about-content .left-content p {
+    padding-left: 0;
+  }
+  .section {
+    padding: 2.5rem 2rem;
+  }
+  .about-stats .progress-bars {
+    grid-template-columns: 1fr;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+    padding-bottom: 4rem;
+  }
+  .portfolios {
+    grid-template-columns: 1fr;
+    padding-bottom: 4rem;
+  }
+  .blog_s {
+    grid-template-columns: 1fr;
+    padding-bottom: 4rem;
+  }
+  .contact-content {
+    flex-direction: column;
+  }
+  .contact-content .right-contact-content {
+    margin-left: 0;
+  }
+  .contact-content .right-contact-content form {
+    width: 90%;
+  }
+  .contact-content .right-contact-content form .submit {
+    width: 100%;
+  }
+  .contact-content .right-contact-content .cot {
+    flex-direction: column;
+  }
+  .contact-content .right-contact-content .cot :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
