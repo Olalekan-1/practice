@@ -1,0 +1,115 @@
+UNITS=MM
+H optimize n staggered n
+$0 $NONE$
+$1 +5
+$2 +12
+$3 3.3V
+$4 A0
+$5 A1
+$6 A2
+$7 A3
+$8 A4
+$9 A5
+$10 AREF
+$11 D0
+$12 D1
+$13 D2
+$14 D3
+$15 D4
+$16 D5
+$17 D6
+$18 D7
+$19 D8
+$20 D9
+$21 D10
+$22 D11
+$23 D12
+$24 D13
+$25 GND
+$26 IOREF
+$27 N-C
+$28 NetC3_2
+$29 NetR1_1
+$30 RESET
+$31 SW_OUT
+#
+#Netlist points
+#
+1 0.002 38.1 23.2800017 T e e staggered 0 0 0
+1 0.002 29.464 23.876 T e e staggered 0 0 0
+1 0.002 29.72999896 12.7 T e e staggered 0 0 0
+1 0.002 34.29 23.5340017 T e e staggered 0 0 0
+1 0.51000152 38.1 2.54 B e e staggered 0 0 0
+1 0.51000152 45.72 2.54 B e e staggered 0 0 0
+2 0.002 48.43500092 27.305 T e e staggered 0 0 0
+2 0.002 48.30800092 37.084 T e e staggered 0 0 0
+2 0.002 23.81000064 24.34970746 T e e staggered 0 0 0
+2 0.002 22.86 26.45029254 T e e staggered 0 0 0
+2 0.002 10.16 25.08000064 T e e staggered 0 0 0
+2 0.002 13.97 25.08000064 T e e staggered 0 0 0
+2 0.762 3.302 33.274 B e e staggered 0 0 0
+3 0.51000152 35.56 2.54 B e e staggered 0 0 0
+4 0.51000152 50.8 2.54 B e e staggered 0 0 0
+5 0.51000152 53.34 2.54 B e e staggered 0 0 0
+6 0.51000152 55.88 2.54 B e e staggered 0 0 0
+7 0.51000152 58.42 2.54 B e e staggered 0 0 0
+8 0.51000152 60.96 2.54 B e e staggered 0 0 0
+8 0.51000152 17.78 50.8 B e e staggered 0 0 0
+9 0.51000152 63.5 2.54 B e e staggered 0 0 0
+9 0.51000152 20.32 50.8 B e e staggered 0 0 0
+10 0.51000152 22.86 50.8 B e e staggered 0 0 0
+11 0.51000152 45.72 50.8 B e e staggered 0 0 0
+12 0.51000152 48.26 50.8 B e e staggered 0 0 0
+13 0.51000152 50.8 50.8 B e e staggered 0 0 0
+14 0.51000152 53.34 50.8 B e e staggered 0 0 0
+15 0.51000152 55.88 50.8 B e e staggered 0 0 0
+16 0.51000152 58.42 50.8 B e e staggered 0 0 0
+17 0.51000152 60.96 50.8 B e e staggered 0 0 0
+18 0.51000152 63.5 50.8 B e e staggered 0 0 0
+19 0.51000152 40.64 50.8 B e e staggered 0 0 0
+20 0.51000152 38.1 50.8 B e e staggered 0 0 0
+21 0.51000152 35.56 50.8 B e e staggered 0 0 0
+22 0.51000152 33.02 50.8 B e e staggered 0 0 0
+23 0.51000152 30.48 50.8 B e e staggered 0 0 0
+24 0.51000152 27.94 50.8 B e e staggered 0 0 0
+25 0.002 38.1 24.98000084 T e e staggered 0 0 0
+25 0.002 54.30799908 37.084 T e e staggered 0 0 0
+25 0.002 51.308 37.084 T e e staggered 0 0 0
+25 0.002 54.43499908 27.305 T e e staggered 0 0 0
+25 0.002 51.435 27.305 T e e staggered 0 0 0
+25 0.002 34.29 25.23400084 T e e staggered 0 0 0
+25 0.002 29.60998904 26.67 T e e staggered 0 0 0
+25 0.002 21.90999936 24.34970746 T e e staggered 0 0 0
+25 0.002 13.97 23.17999936 T e e staggered 0 0 0
+25 0.002 10.16 23.17999936 T e e staggered 0 0 0
+25 0.51000152 25.4 50.8 B e e staggered 0 0 0
+25 0.51000152 43.18 2.54 B e e staggered 0 0 0
+25 0.51000152 40.64 2.54 B e e staggered 0 0 0
+25 0.762 3.048 25.654 B e e staggered 0 0 0
+25 0.381 38.1 26.67 B e e staggered 0 0 0 v
+25 0.3556 21.336 22.352 B e e staggered 0 0 0 v
+25 0.254 55.88 24.384 B e e staggered 0 0 0 v
+25 0.254 55.88 27.432 B e e staggered 0 0 0 v
+25 0.254 55.88 33.909 B e e staggered 0 0 0 v
+25 0.254 55.88 30.48 B e e staggered 0 0 0 v
+25 0.254 55.88 28.956 B e e staggered 0 0 0 v
+25 0.254 55.88 35.433 B e e staggered 0 0 0 v
+25 0.254 55.88 38.481 B e e staggered 0 0 0 v
+25 0.254 55.88 25.908 B e e staggered 0 0 0 v
+25 0.254 55.88 40.005 B e e staggered 0 0 0 v
+25 0.254 55.88 36.957 B e e staggered 0 0 0 v
+25 0.381 34.29 26.67 B e e staggered 0 0 0 v
+25 0.2286 29.591 27.94 B e e staggered 0 0 0 v
+25 0.3556 13.97 21.59 B e e staggered 0 0 0 v
+25 0.3556 10.16 21.59 B e e staggered 0 0 0 v
+26 0.51000152 30.48 2.54 B e e staggered 0 0 0
+27 0.51000152 27.94 2.54 B e e staggered 0 0 0
+28 0.002 21.90999936 26.45029254 T e e staggered 0 0 0
+28 0.002 18.34421782 13.97 T e e staggered 0 0 0
+29 0.002 23.81000064 26.45029254 T e e staggered 0 0 0
+29 0.002 28.8099881 26.67 T e e staggered 0 0 0
+29 0.002 28.81399876 23.876 T e e staggered 0 0 0
+30 0.51000152 33.02 2.54 B e e staggered 0 0 0
+31 0.002 22.86 24.34970746 T e e staggered 0 0 0
+31 0.002 19.75578218 13.97 T e e staggered 0 0 0
+31 0.002 24.13 12.7 T e e staggered 0 0 0

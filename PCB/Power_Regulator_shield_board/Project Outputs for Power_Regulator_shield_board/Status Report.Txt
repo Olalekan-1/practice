@@ -1,0 +1,10 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of PCB Document [Shield_boardPCB.PcbDoc]
+   Generated File[Bill of Materials-Shield_boardPCB.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 9:42:49 AM On 5/5/2025

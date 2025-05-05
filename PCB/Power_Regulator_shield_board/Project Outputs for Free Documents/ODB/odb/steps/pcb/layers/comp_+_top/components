@@ -1,0 +1,400 @@
+UNITS=MM
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+@2 .no_pop
+@3 .comp_ignore
+@4 .comp_variant_list
+@5 .placement_layer
+
+#
+#Component attribute text strings
+#
+&0 top_layer
+
+# CMP 0
+CMP 3 22.86 25.4 270 N U1 TPS562201DDCR ;0=1,1=0.0000,5=0
+PRP Case/Package 'SOT'
+PRP Contact_Plating 'Tin'
+PRP Lead_Free 'Lead Free'
+PRP Max_Input_Voltage '17V'
+PRP Max_Operating_Temperature '125°C'
+PRP Max_Output_Current '2A'
+PRP Min_Input_Voltage '4.5V'
+PRP Min_Operating_Temperature '-40°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Outputs '1'
+PRP Number_of_Pins '6'
+PRP Operating_Supply_Voltage '17V'
+PRP Output_Type 'Adjustable'
+PRP Output_Voltage '7V'
+PRP Quiescent_Current '400uA'
+PRP RoHS_Compliant 'Yes'
+PRP Switching_Frequency '580kHz'
+TOP 0 21.90999936 24.34970746 270 N 7 12 1
+TOP 1 22.86 24.34970746 270 N 1 2 2
+TOP 2 23.81000064 24.34970746 270 N 30 6 3
+TOP 3 23.81000064 26.45029254 270 N 3 2 4
+TOP 4 22.86 26.45029254 270 N 30 3 5
+TOP 5 21.90999936 26.45029254 270 N 4 1 6
+#
+# CMP 1
+CMP 8 29.20998984 26.67 180 N R2 Rfbb ;0=1,1=0.4000,5=0
+PRP Case_Code_(Imperial) '0402'
+PRP Case_Code_(Metric) '1005'
+PRP Case\/Package '0402'
+PRP Composition 'ThickFilm'
+PRP Contact_Plating 'Tin'
+PRP Datasheet_URL 'https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf'
+PRP Datasheet_Version '02/2017'
+PRP Depth '0.5mm'
+PRP Height '0.35mm'
+PRP Lead_Free 'LeadFree'
+PRP Length '1mm'
+PRP Manufacturer 'Panasonic'
+PRP Manufacturer_URL 'http://www.panasonic.com/'
+PRP Max_Operating_Temperature '155degC'
+PRP Max_Power_Dissipation '100mW'
+PRP Military_Standard 'Not'
+PRP Min_Operating_Temperature '-55degC'
+PRP Mount 'SurfaceMount'
+PRP Mounting_Technology 'SurfaceMount'
+PRP Number_of_Pins '2'
+PRP Number_of_Terminations '2'
+PRP Package_Description '2-Pin Surface Mount Device, Body 1 x 0.5 mm'
+PRP Package_Quantity '1'
+PRP Package_Reference '402'
+PRP Packaging 'TapeandReel'
+PRP Power_Rating '100mW'
+PRP Radiation_Hardening 'No'
+PRP REACH_SVHC 'NoSVHC'
+PRP Resistance '10KOhm'
+PRP RoHSCompliant 'True'
+PRP Temperature_Coefficient '100ppm\/degreesC'
+PRP Termination 'SMD/SMT'
+PRP Tolerance '1%'
+PRP Value '10KOhm'
+PRP Voltage_Rating '50V'
+PRP Voltage_Rating_(DC) '50V'
+PRP Width '0.02inch'
+TOP 0 29.60998904 26.67 90 N 7 13 1
+TOP 1 28.8099881 26.67 90 N 3 1 2
+#
+# CMP 2
+CMP 7 29.13899938 23.876 0 N R1 Rfbt ;0=1,1=0.2800,5=0
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'CRCW020156K2FNED'
+TOP 0 28.81399876 23.876 270 N 3 0 1
+TOP 1 29.464 23.876 270 N 31 5 2
+#
+# CMP 3
+CMP 5 26.92999948 12.7 0 N L1 L ;0=1,1=0.0000,5=0
+PRP Case/Package 'Nonstandard'
+PRP Core_Material 'Ferrite'
+PRP Current_Rating '4.3A'
+PRP DC_Resistance_(DCR) '19mR'
+PRP Depth '8.2mm'
+PRP Halogen_Free 'Halogen Free'
+PRP Height '3mm'
+PRP Height_-_Seated_(Max) '0.118inch'
+PRP Inductance '3.3uH'
+PRP Inductance_Tolerance '20%'
+PRP Lead_Free 'Lead Free'
+PRP Lead_Pitch '5.6mm'
+PRP Length '8mm'
+PRP Max_DC_Current '4.2A'
+PRP Max_Operating_Temperature '125°C'
+PRP Min_Operating_Temperature '-25°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Pins '2'
+PRP Package_Quantity '1000'
+PRP Packaging 'Tape and Reel'
+PRP Radiation_Hardening 'No'
+PRP REACH_SVHC 'No SVHC'
+PRP Resistor_Type 'Wirewound'
+PRP RMS_Current_(Irms) '4.3A'
+PRP RoHS_Compliant 'Yes'
+PRP Saturation_Current '4.2A'
+PRP Self_Resonant_Frequency '50MHz'
+PRP Series 'NRS'
+PRP Shielding 'Shielded'
+PRP Termination 'SMD/SMT'
+PRP Test_Frequency '100kHz'
+PRP Tolerance '20%'
+PRP Value '3.3uH'
+PRP Width '0.315inch'
+TOP 0 24.13 12.7 0 N 1 0 1
+TOP 1 29.72999896 12.7 0 N 31 6 2
+#
+# CMP 4
+CMP 10 54.61 50.8 180 N J4 8-pin-header ;0=2,1=8.5100,5=0
+PRP Check_prices 'https://www.snapeda.com/parts/SSQ-108-03-T-S/Samtec/view-part/?ref=eda'
+PRP MF 'Samtec'
+PRP MP 'SSQ-108-03-T-S'
+PRP Package 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/SSQ-108-03-T-S/Samtec/view-part/?ref=snap'
+PRP Value ''
+TOP 0 45.72 50.8 180 N 21 0 01
+TOP 1 48.26 50.8 180 N 20 0 02
+TOP 2 50.8 50.8 180 N 19 0 03
+TOP 3 53.34 50.8 180 N 18 0 04
+TOP 4 55.88 50.8 180 N 17 0 05
+TOP 5 58.42 50.8 180 N 16 0 06
+TOP 6 60.96 50.8 180 N 15 0 07
+TOP 7 63.5 50.8 180 N 14 0 08
+#
+# CMP 5
+CMP 6 29.21 50.8 0 N J3 10-pin-header ;0=2,1=0.0000,5=0
+PRP Color 'Black'
+PRP Connector_Type 'Receptacle, Socket'
+PRP Contact_Material 'Nickel, Tin'
+PRP Contact_Plating 'Tin'
+PRP Current_Rating '6.3A'
+PRP Height '8.64mm'
+PRP Housing_Color 'Black'
+PRP Housing_Material 'Plastic'
+PRP Lead_Free 'Lead Free'
+PRP Length '25.9mm'
+PRP Lifecycle_Status 'Production'
+PRP Manufacturer_Lifecycle_Status 'PRODUCTION'
+PRP Max_Operating_Temperature '105°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Through Hole'
+PRP Number_of_Contacts '10'
+PRP Number_of_Pins '10'
+PRP Number_of_Positions '10'
+PRP Number_of_Rows '1'
+PRP Packaging 'Bulk'
+PRP Pitch '2.54mm'
+PRP Radiation_Hardening 'No'
+PRP RoHS 'Compliant'
+PRP Termination 'Solder'
+PRP Voltage_Rating '655V'
+PRP Voltage_Rating_(AC) '465V'
+PRP Voltage_Rating_(DC) '655V'
+PRP Width '2.41mm'
+TOP 0 17.78 50.8 0 N 24 0 1
+TOP 1 20.32 50.8 0 N 23 0 2
+TOP 2 22.86 50.8 0 N 22 0 3
+TOP 3 25.4 50.8 0 N 7 3 4
+TOP 4 27.94 50.8 0 N 8 0 5
+TOP 5 30.48 50.8 0 N 9 0 6
+TOP 6 33.02 50.8 0 N 10 0 7
+TOP 7 35.56 50.8 0 N 11 0 8
+TOP 8 38.1 50.8 0 N 12 0 9
+TOP 9 40.64 50.8 0 N 13 0 10
+#
+# CMP 6
+CMP 9 57.15 2.54 180 N J2 1x6_Header ;0=2,1=8.5100,5=0
+PRP Check_prices 'https://www.snapeda.com/parts/SSQ-106-03-T-S/Samtec+Inc./view-part/?ref=eda'
+PRP MF 'Samtec Inc.'
+PRP MP 'SSQ-106-03-T-S'
+PRP Package 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/SSQ-106-03-T-S/Samtec+Inc./view-part/?ref=snap'
+PRP Value ''
+TOP 0 50.8 2.54 180 N 28 0 01
+TOP 1 53.34 2.54 180 N 27 0 02
+TOP 2 55.88 2.54 180 N 26 0 03
+TOP 3 58.42 2.54 180 N 25 0 04
+TOP 4 60.96 2.54 180 N 24 1 05
+TOP 5 63.5 2.54 180 N 23 1 06
+#
+# CMP 7
+CMP 10 36.83 2.54 180 N J1 8-pin-header ;0=2,1=8.5100,5=0
+PRP Check_prices 'https://www.snapeda.com/parts/SSQ-108-03-T-S/Samtec/view-part/?ref=eda'
+PRP MF 'Samtec'
+PRP MP 'SSQ-108-03-T-S'
+PRP Package 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/SSQ-108-03-T-S/Samtec/view-part/?ref=snap'
+PRP Value ''
+TOP 0 27.94 2.54 180 N 5 0 01
+TOP 1 30.48 2.54 180 N 6 0 02
+TOP 2 33.02 2.54 180 N 2 0 03
+TOP 3 35.56 2.54 180 N 29 0 04
+TOP 4 38.1 2.54 180 N 31 1 05
+TOP 5 40.64 2.54 180 N 7 7 06
+TOP 6 43.18 2.54 180 N 7 2 07
+TOP 7 45.72 2.54 180 N 31 2 08
+#
+# CMP 8
+CMP 1 51.435 27.305 0 N D2 MKRAWT-00-0000-0D0HG235H ;0=1,1=4.2100,5=0
+TOP 0 48.43500092 27.305 0 N 30 4 1
+TOP 1 54.43499908 27.305 0 N 7 10 2
+TOP 2 51.435 27.305 0 N 7 9 3
+#
+# CMP 9
+CMP 1 51.308 37.084 0 N D1 MKRAWT-00-0000-0D0HG235H ;0=1,1=4.2100,5=0
+TOP 0 48.30800092 37.084 0 N 30 5 1
+TOP 1 54.30799908 37.084 0 N 7 6 2
+TOP 2 51.308 37.084 0 N 7 11 3
+#
+# CMP 10
+CMP 0 34.29 24.384 90 N C5 Cout ;0=1,1=1.0000,5=0
+PRP Applications 'GeneralPurpose'
+PRP Capacitance '22µF'
+PRP Category 'Capacitors'
+PRP Datasheet_URL 'http://download.siliconexpert.com/pdfs/2015/4/21/15/54/45/779/tdk_/manual/37024850441143360mlcc_commercial_general_en.pdf'
+PRP Datasheet_Version 'Mar-15'
+PRP Design_Resources '20WNon-IsolatedBuckLEDDriverUsingPLLNK460KG'
+PRP Family 'CeramicCapacitors'
+PRP Features '-'
+PRP Height_-_Seated_(Max) '-'
+PRP Kits '445-9014-KIT-ND-KITMLCC100PF-22UF060310-50V'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'TDK'
+PRP Manufacturer_URL 'http://www.tdk.com/'
+PRP Mounting_Type 'SurfaceMount,MLCC'
+PRP Online_Catalog 'CSeries,GeneralPurpose'
+PRP Operating_Temperature '-55degC~85degC'
+PRP Other_Names '445-9077-1'
+PRP Package_/_Case '0603(1608Metric)'
+PRP Package_Description '2-Pin Surface Mount Device, Body 1.6 x 0.8 mm'
+PRP Package_Reference '603'
+PRP Packaging 'CutTape(CT)'
+PRP PCN_Part_Number 'MLCCPartNumberChange30/Nov/2012'
+PRP Product_Training_Modules 'CSeriesGeneralApplicationsSEAT,CCV,andTVCLDesignToolsGuidetoReplacinganElectrolyticCapacitorwithanMLCC'
+PRP Ratings '-'
+PRP RoHS_Information 'RoHSCertificate-MLCC'
+PRP Series 'C'
+PRP Size_/_Dimension '0.063_Lx0.031_W(1.60mmx0.80mm)'
+PRP Standard_Package '1'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.035_(0.90mm)'
+PRP Tolerance '±20%'
+PRP Value '22µF'
+PRP Voltage_-_Rated '10V'
+TOP 0 34.29 25.23400084 0 N 7 14 1
+TOP 1 34.29 23.5340017 0 N 31 3 2
+#
+# CMP 11
+CMP 0 38.1 24.13 90 N C4 Cout ;0=1,1=1.0000,5=0
+PRP Applications 'GeneralPurpose'
+PRP Capacitance '22µF'
+PRP Category 'Capacitors'
+PRP Datasheet_URL 'http://download.siliconexpert.com/pdfs/2015/4/21/15/54/45/779/tdk_/manual/37024850441143360mlcc_commercial_general_en.pdf'
+PRP Datasheet_Version 'Mar-15'
+PRP Design_Resources '20WNon-IsolatedBuckLEDDriverUsingPLLNK460KG'
+PRP Family 'CeramicCapacitors'
+PRP Features '-'
+PRP Height_-_Seated_(Max) '-'
+PRP Kits '445-9014-KIT-ND-KITMLCC100PF-22UF060310-50V'
+PRP Lead_Spacing '-'
+PRP Lead_Style '-'
+PRP Manufacturer 'TDK'
+PRP Manufacturer_URL 'http://www.tdk.com/'
+PRP Mounting_Type 'SurfaceMount,MLCC'
+PRP Online_Catalog 'CSeries,GeneralPurpose'
+PRP Operating_Temperature '-55degC~85degC'
+PRP Other_Names '445-9077-1'
+PRP Package_/_Case '0603(1608Metric)'
+PRP Package_Description '2-Pin Surface Mount Device, Body 1.6 x 0.8 mm'
+PRP Package_Reference '603'
+PRP Packaging 'CutTape(CT)'
+PRP PCN_Part_Number 'MLCCPartNumberChange30/Nov/2012'
+PRP Product_Training_Modules 'CSeriesGeneralApplicationsSEAT,CCV,andTVCLDesignToolsGuidetoReplacinganElectrolyticCapacitorwithanMLCC'
+PRP Ratings '-'
+PRP RoHS_Information 'RoHSCertificate-MLCC'
+PRP Series 'C'
+PRP Size_/_Dimension '0.063_Lx0.031_W(1.60mmx0.80mm)'
+PRP Standard_Package '1'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.035_(0.90mm)'
+PRP Tolerance '±20%'
+PRP Value '22µF'
+PRP Voltage_-_Rated '10V'
+TOP 0 38.1 24.98000084 0 N 7 5 1
+TOP 1 38.1 23.2800017 0 N 31 4 2
+#
+# CMP 12
+CMP 2 19.05 13.97 180 N C3 Cbst ;0=1,1=0.0000,5=0
+PRP Capacitance '100nF'
+PRP Case_Code_(Imperial) '0805'
+PRP Case_Code_(Metric) '2012'
+PRP Case/Package '0805'
+PRP Construction 'Flat'
+PRP Contact_Plating 'Tin'
+PRP Depth '1.25mm'
+PRP Dielectric 'X7R'
+PRP Dissipation_Factor '3%'
+PRP Height '0.94mm'
+PRP Insulation_Resistance '100GR'
+PRP Lead_Free 'Lead Free'
+PRP Length '2.01mm'
+PRP Max_Operating_Temperature '125°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Pins '2'
+PRP Package_Quantity '1'
+PRP Packaging 'Tape and Reel'
+PRP Radiation_Hardening 'No'
+PRP REACH_SVHC 'No SVHC'
+PRP RoHS_Compliant 'Yes'
+PRP Series '-'
+PRP Termination 'SMD/SMT'
+PRP Thickness '0.037inch'
+PRP Tolerance '10%'
+PRP Value '100nF'
+PRP Voltage '25V'
+PRP Voltage_Rating '25V'
+PRP Voltage_Rating_(DC) '25V'
+PRP Width '0.049inch'
+TOP 0 19.75578218 13.97 180 N 1 1 1
+TOP 1 18.34421782 13.97 180 N 4 0 2
+#
+# CMP 13
+CMP 4 13.97 24.13 90 N C2 Cin2 ;0=1,1=0.0000,5=0
+PRP Capacitance '10uF'
+PRP Case_Code_(Imperial) '0805'
+PRP Case_Code_(Metric) '2012'
+PRP Case/Package '0805'
+PRP Dielectric 'X5R'
+PRP Height '1.25mm'
+PRP Lead_Free 'Lead Free'
+PRP Length '0.079inch'
+PRP Max_Operating_Temperature '85°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Package_Quantity '3000'
+PRP Packaging 'Tape and Reel'
+PRP REACH_SVHC 'No SVHC'
+PRP Termination 'SMD/SMT'
+PRP Thickness '0.057inch'
+PRP Tolerance '10%'
+PRP Value '10uF'
+PRP Voltage_Rating '35V'
+PRP Voltage_Rating_(DC) '35V'
+PRP Weight '0.000335oz'
+PRP Width '0.049inch'
+TOP 0 13.97 25.08000064 90 N 30 2 1
+TOP 1 13.97 23.17999936 90 N 7 8 2
+#
+# CMP 14
+CMP 4 10.16 24.13 90 N C1 Cin1 ;0=1,1=0.0000,5=0
+PRP Capacitance '10uF'
+PRP Case_Code_(Imperial) '0805'
+PRP Case_Code_(Metric) '2012'
+PRP Case/Package '0805'
+PRP Dielectric 'X5R'
+PRP Height '1.25mm'
+PRP Lead_Free 'Lead Free'
+PRP Length '0.079inch'
+PRP Max_Operating_Temperature '85°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Package_Quantity '3000'
+PRP Packaging 'Tape and Reel'
+PRP REACH_SVHC 'No SVHC'
+PRP Termination 'SMD/SMT'
+PRP Thickness '0.057inch'
+PRP Tolerance '10%'
+PRP Value '10uF'
+PRP Voltage_Rating '35V'
+PRP Voltage_Rating_(DC) '35V'
+PRP Weight '0.000335oz'
+PRP Width '0.049inch'
+TOP 0 10.16 25.08000064 90 N 30 1 1
+TOP 1 10.16 23.17999936 90 N 7 4 2
+#

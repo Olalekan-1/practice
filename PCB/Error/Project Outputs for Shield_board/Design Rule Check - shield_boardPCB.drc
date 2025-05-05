@@ -1,0 +1,82 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Ahmed Olalekan\Desktop\practice\PCB\Shield_board\shield_boardPCB.PcbDoc
+Date     : 4/30/2025
+Time     : 4:10:34 PM
+
+Processing Rule : Clearance Constraint (Gap=10mil) (InNet('+12')),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net GND Between Via (1349mil,882mil) from Top Layer to Bottom Layer And Pad D2-3(2040mil,950mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-06(1600mil,100mil) on Multi-Layer And Pad J1-07(1700mil,100mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (1349.795mil,823mil)(1349.795mil,882.795mil) on Top Layer And Pad J1-06(1600mil,100mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-4(1020mil,2000mil) on Multi-Layer And Via (1112.795mil,879.795mil) from Top Layer to Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (795.197mil,681.668mil)(795.197mil,740mil) on Top Layer And Pad R2-1(1112.795mil,820mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (1112.795mil,879.795mil) from Top Layer to Bottom Layer And Via (1220mil,880mil) from Top Layer to Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (1220mil,880mil) from Top Layer to Bottom Layer And Via (1349mil,882mil) from Top Layer to Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (441mil,620mil) from Top Layer to Bottom Layer And Via (578mil,616mil) from Top Layer to Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (578mil,616mil) from Top Layer to Bottom Layer And Via (775mil,652mil) from Top Layer to Bottom Layer 
+Rule Violations :9
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=10mil) (Max=40mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (5.78mil < 10mil) Between Pad R1-1(1089.504mil,758mil) on Top Layer And Pad R1-2(1121mil,758mil) on Top Layer [Top Solder] Mask Sliver [5.78mil]
+Rule Violations :1
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (7.119mil < 10mil) Between Pad R1-1(1089.504mil,758mil) on Top Layer And Text "R1" (1041.923mil,768.003mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.119mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.685mil < 10mil) Between Pad R2-1(1112.795mil,820mil) on Top Layer And Text "R2" (1133.339mil,810.003mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.685mil]
+Rule Violations :2
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Arc (1015.748mil,100mil) on Top Overlay And Text "J1" (976.671mil,100.003mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Arc (1915.748mil,100mil) on Top Overlay And Text "J2" (1883.339mil,90.003mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+Rule Violations :2
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+   Violation between Net Antennae: Via (1112.795mil,879.795mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (1220mil,880mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (1349mil,882mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1020mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1070mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1222mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1272mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1322mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1372mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1422mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,1472mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,820mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,870mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,920mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2220mil,970mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (441mil,620mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (578mil,616mil) from Top Layer to Bottom Layer 
+Rule Violations :17
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 31
+Waived Violations : 0
+Time Elapsed        : 00:00:00

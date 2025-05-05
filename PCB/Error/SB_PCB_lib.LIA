@@ -1,0 +1,95 @@
+ACCEL_ASCII "C:\Users\Ahmed Olalekan\Desktop\practice\PCB\Shield_board\SB_PCB_lib.LIA"
+
+(asciiHeader
+  (asciiVersion 3 0)
+  (timeStamp 2025 4 22 9 32 4)
+  (program "Design Explorer 99 SE" "6.1.0")
+  (copyright "Copyright ® 2002 Altium Ltd")
+  (headerString "")
+  (fileUnits Mil)
+  (guidString "{00000000-0000-0000-0000-000000000000}")
+)
+
+(library "Library_1"
+  (padStyleDef "(Default)"
+    (holeDiam 30mil)
+    (startRange 1)
+    (endRange 2)
+    (padShape (layerNumRef 1) (padShapeType Oval) (shapeWidth 60mil) (shapeHeight 60mil) )
+    (padShape (layerNumRef 2) (padShapeType Oval) (shapeWidth 60mil) (shapeHeight 60mil) )
+    (padShape (layerType Signal) (padShapeType Oval) (shapeWidth 60mil) (shapeHeight 60mil) )
+    (padShape (layerType Plane) (padShapeType NoConnect) (shapeWidth 0.0) (shapeHeight 0.0) )
+    (padShape (layerType NonSignal) (padShapeType Oval) (shapeWidth 0mil) (shapeHeight 0mil) )
+  )
+  (viaStyleDef "(Default)"
+    (holeDiam 28mil)
+    (startRange 1)
+    (endRange 2)
+    (viaShape (layerNumRef 1) (viaShapeType Ellipse) (shapeWidth 50mil) (shapeHeight 50mil) )
+    (viaShape (layerNumRef 2) (viaShapeType Ellipse) (shapeWidth 50mil) (shapeHeight 50mil) )
+    (viaShape (layerType Signal) (viaShapeType Ellipse) (shapeWidth 50mil) (shapeHeight 50mil) )
+    (viaShape (layerType Plane) (viaShapeType NoConnect) (shapeWidth 0.0) (shapeHeight 0.0) )
+    (viaShape (layerType NonSignal) (viaShapeType Ellipse) (shapeWidth 0mil) (shapeHeight 0mil) )
+  )
+  (textStyleDef "(Default)"
+    (font
+      (fontType Stroke)
+      (fontFamily Modern)
+      (fontFace "Quality")
+      (fontHeight 80mil) 
+      (strokeWidth 10mil) 
+    )
+    (textStyleAllowTType False)
+    (textStyleDisplayTType False)
+  )
+  (textStyleDef "(DefaultTTF)"    
+    (font                         
+      (fontType Stroke)           
+      (fontFamily SanSerif)       
+      (fontFace "QUALITY")        
+      (fontHeight 100.0)          
+      (strokeWidth 10.0)          
+    )                             
+    (font                         
+      (fontType TrueType)         
+      (fontFamily Modern)         
+      (fontFace "Arial")          
+      (fontHeight 125.0)          
+      (strokeWidth 0.19843 mm)    
+      (fontWeight 400)            
+      (fontCharSet 0)             
+      (fontOutPrecision 7)        
+      (fontClipPrecision 32)      
+      (fontQuality 1)             
+      (fontPitchAndFamily 6)      
+    )                             
+    (textStyleAllowTType True)    
+    (textStyleDisplayTType True)  
+  )                               
+  (patternDefExtended "PCBCOMPONENT_1"
+  (originalName "PCBCOMPONENT")
+    (patternGraphicsNameRef "Primary")
+
+    (patternGraphicsDef
+      (patternGraphicsNameDef "Primary")
+      (multiLayer
+      )
+      (layerContents (layerNumRef 6)
+        (attr "RefDes" "" (pt 49999mil -149989mil) (isVisible True) (textStyleRef "(Default)") )
+        (attr "Type" "" (pt 49999mil 49889mil) (isVisible True) (textStyleRef "(Default)") )
+      )
+    )
+  )
+  (compDef "PCBCOMPONENT_1"
+    (originalName "PCBCOMPONENT")
+    (compHeader
+      (sourceLibrary "")
+      (numPins 0)
+      (numParts 1)
+      (alts (ieeeAlt False) (deMorganAlt False))
+      (refDesPrefix "")
+    )
+    (attachedPattern (patternNum 1) (patternName "PCBCOMPONENT")
+      (numPads 0)
+  )
+)

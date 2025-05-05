@@ -1,0 +1,10 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [Shield_boardPCB.PcbDoc]
+   Generated File[Pick Place for Shield_boardPCB.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 9:34:14 AM On 5/5/2025

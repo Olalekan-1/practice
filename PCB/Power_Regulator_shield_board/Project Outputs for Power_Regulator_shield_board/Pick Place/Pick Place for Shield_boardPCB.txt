@@ -1,0 +1,28 @@
+Altium Designer Pick and Place Locations
+C:\Users\Ahmed Olalekan\Desktop\practice\PCB\Power_Regulator_shield_board\Project Outputs for Power_Regulator_shield_board\Pick Place\Pick Place for Shield_boardPCB.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       05/05/25
+Time:       09:42
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment                  Layer    Footprint                       Center-X(mil) Center-Y(mil) Rotation Description                                                                                       
+U1         TPS562201DDCR            TopLayer FP-DDC0006A-IPC_C               900.000       1000.000      90       "IC REG BUCK ADJ 2A TSOT23-6"                                                                     
+R2         Rfbb                     TopLayer RESC1005X40X25LL05T05           1149.999      1050.000      180      "Chip Resistor, 10 KOhm, +/- 1%, 0.1 W, -55 to 155 degC, 0402 (1005 Metric), RoHS, Tape and Reel" 
+R1         Rfbt                     TopLayer RESC0603X28X15NL05T05           1147.205      940.000       0        ""                                                                                                
+L1         L                        TopLayer FP-NRS8030-MFG                  1060.236      500.000       0        "Inductor Power Shielded Wirewound 3.3uH 20% 100KHz Ferrite 4.2A 24.7mO DCR T/R"                  
+J4         8-pin-header             TopLayer SAMTEC_SSQ-108-03-X-S           2150.000      2000.000      180      "SSQ - Samtec 2.54mm Square Tail Single Row Socket Strip 8.5mm Profile - Fast Stock"              
+J3         10-pin-header            TopLayer FP-SSQ-110-03-T-S-MFG           1150.000      2000.000      0        "SSQ-110-03-T-S Headers & Wire Housings Tiger Buy Socket Strip with Square Tails, 0.100 Pitch"    
+J2         "1x6 Header"             TopLayer SAMTEC_SSQ-106-03-X-S           2250.000      100.000       180      "SSQ - Samtec 2.54mm Square Tail Single Row Socket Strip 8.5mm Profile - Fast Stock"              
+J1         8-pin-header             TopLayer SAMTEC_SSQ-108-03-X-S           1450.000      100.000       180      "SSQ - Samtec 2.54mm Square Tail Single Row Socket Strip 8.5mm Profile - Fast Stock"              
+D2         MKRAWT-00-0000-0D0HG235H TopLayer CREE-MK-R-2_V                   2025.000      1075.000      0        "LED, White, 12 V, 2-Pin SMD, RoHS, Tape and Reel"                                                
+D1         MKRAWT-00-0000-0D0HG235H TopLayer CREE-MK-R-2_V                   2020.000      1460.000      0        "LED, White, 12 V, 2-Pin SMD, RoHS, Tape and Reel"                                                
+C5         Cout                     TopLayer CAPC1608X100X20ML10             1350.000      960.000       270      "Chip Capacitor, 22 uF, +/- 20%, 10 V, -55 to 85 degC, 0603 (1608 Metric), RoHS, Tape and Reel"   
+C4         Cout                     TopLayer CAPC1608X100X20ML10             1500.000      950.000       270      "Chip Capacitor, 22 uF, +/- 20%, 10 V, -55 to 85 degC, 0603 (1608 Metric), RoHS, Tape and Reel"   
+C3         Cbst                     TopLayer FP-0805-L_2_01_0_2-W_1_25-IPC_C 750.000       550.000       180      "General Purpose Ceramic Capacitor, 0805, 100nF, 10%, X7R, 0.15, 25V"                             
+C2         Cin2                     TopLayer FP-GRM21B-0_2-e0_2_0_7-MFG      550.000       950.000       270      "Chip Multilayer Ceramic Capacitors for General Purpose, 0805, 10uF, X5R, 15%, 10%, 35V"          
+C1         Cin1                     TopLayer FP-GRM21B-0_2-e0_2_0_7-MFG      400.000       950.000       270      "Chip Multilayer Ceramic Capacitors for General Purpose, 0805, 10uF, X5R, 15%, 10%, 35V"          
