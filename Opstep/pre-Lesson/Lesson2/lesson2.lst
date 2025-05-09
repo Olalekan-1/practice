@@ -1,0 +1,206 @@
+CCS PCM C Compiler, Version 5.015, 5967               09-May-25 10:43
+
+               Filename:   C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\pre-Lesson\Lesson2\lesson2.lst
+
+               ROM used:   134 words (13%)
+                           Largest free fragment is 890
+               RAM used:   5 (7%) at main() level
+                           7 (10%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   018
+0003:  NOP
+.................... #include <lesson2.h> 
+.................... #include <16F84A.h> 
+.................... //////////// Standard Header file for the PIC16F84A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F84A 
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES NOWDT,PROTECT, XT,PUT                  //No Watch Dog Timer 
+....................  
+.................... #use delay(crystal=4000000) 
+0004:  MOVLW  13
+0005:  MOVWF  04
+0006:  MOVF   00,W
+0007:  BTFSC  03.2
+0008:  GOTO   017
+0009:  MOVLW  01
+000A:  MOVWF  0D
+000B:  CLRF   0C
+000C:  DECFSZ 0C,F
+000D:  GOTO   00C
+000E:  DECFSZ 0D,F
+000F:  GOTO   00B
+0010:  MOVLW  4A
+0011:  MOVWF  0C
+0012:  DECFSZ 0C,F
+0013:  GOTO   012
+0014:  GOTO   015
+0015:  DECFSZ 00,F
+0016:  GOTO   009
+0017:  RETURN
+....................  
+....................  
+....................  
+.................... void main() 
+0018:  MOVF   03,W
+0019:  ANDLW  1F
+001A:  MOVWF  03
+.................... { 
+....................    output_a(0); 
+001B:  BSF    03.5
+001C:  CLRF   05
+001D:  BCF    03.5
+001E:  CLRF   05
+....................    output_b(0); 
+001F:  BSF    03.5
+0020:  CLRF   06
+0021:  BCF    03.5
+0022:  CLRF   06
+....................    set_tris_a(0b11111); 
+0023:  MOVLW  1F
+0024:  BSF    03.5
+0025:  MOVWF  05
+....................    set_tris_b(0); 
+0026:  MOVLW  00
+0027:  MOVWF  06
+....................    output_a(0); 
+0028:  CLRF   05
+0029:  BCF    03.5
+002A:  CLRF   05
+....................    output_b(0); 
+002B:  BSF    03.5
+002C:  CLRF   06
+002D:  BCF    03.5
+002E:  CLRF   06
+....................    unsigned int8 sensor_data; 
+....................     
+....................    while(TRUE) 
+....................    { 
+....................       sensor_data = input_a(); 
+002F:  MOVLW  FF
+0030:  BSF    03.5
+0031:  MOVWF  05
+0032:  BCF    03.5
+0033:  MOVF   05,W
+0034:  MOVWF  11
+....................       if (sensor_data == 7){ 
+0035:  MOVF   11,W
+0036:  SUBLW  07
+0037:  BTFSS  03.2
+0038:  GOTO   051
+....................          output_b(7); 
+0039:  BSF    03.5
+003A:  CLRF   06
+003B:  MOVLW  07
+003C:  BCF    03.5
+003D:  MOVWF  06
+....................          delay_ms(1000); 
+003E:  MOVLW  04
+003F:  MOVWF  12
+0040:  MOVLW  FA
+0041:  MOVWF  13
+0042:  CALL   004
+0043:  DECFSZ 12,F
+0044:  GOTO   040
+....................          output_b(0); 
+0045:  BSF    03.5
+0046:  CLRF   06
+0047:  BCF    03.5
+0048:  CLRF   06
+....................          delay_ms(1000); 
+0049:  MOVLW  04
+004A:  MOVWF  12
+004B:  MOVLW  FA
+004C:  MOVWF  13
+004D:  CALL   004
+004E:  DECFSZ 12,F
+004F:  GOTO   04B
+....................       } 
+0050:  GOTO   084
+....................       else if (sensor_data == 15){ 
+0051:  MOVF   11,W
+0052:  SUBLW  0F
+0053:  BTFSS  03.2
+0054:  GOTO   06D
+....................          output_b(15); 
+0055:  BSF    03.5
+0056:  CLRF   06
+0057:  MOVLW  0F
+0058:  BCF    03.5
+0059:  MOVWF  06
+....................          delay_ms(1000); 
+005A:  MOVLW  04
+005B:  MOVWF  12
+005C:  MOVLW  FA
+005D:  MOVWF  13
+005E:  CALL   004
+005F:  DECFSZ 12,F
+0060:  GOTO   05C
+....................          output_b(0); 
+0061:  BSF    03.5
+0062:  CLRF   06
+0063:  BCF    03.5
+0064:  CLRF   06
+....................          delay_ms(1000); 
+0065:  MOVLW  04
+0066:  MOVWF  12
+0067:  MOVLW  FA
+0068:  MOVWF  13
+0069:  CALL   004
+006A:  DECFSZ 12,F
+006B:  GOTO   067
+....................       } 
+006C:  GOTO   084
+....................      else{ 
+....................                output_b(255); 
+006D:  BSF    03.5
+006E:  CLRF   06
+006F:  MOVLW  FF
+0070:  BCF    03.5
+0071:  MOVWF  06
+....................                delay_ms(1000); 
+0072:  MOVLW  04
+0073:  MOVWF  12
+0074:  MOVLW  FA
+0075:  MOVWF  13
+0076:  CALL   004
+0077:  DECFSZ 12,F
+0078:  GOTO   074
+....................                output_b(0); 
+0079:  BSF    03.5
+007A:  CLRF   06
+007B:  BCF    03.5
+007C:  CLRF   06
+....................                delay_ms(1000); 
+007D:  MOVLW  04
+007E:  MOVWF  12
+007F:  MOVLW  FA
+0080:  MOVWF  13
+0081:  CALL   004
+0082:  DECFSZ 12,F
+0083:  GOTO   07F
+....................      } 
+0084:  GOTO   02F
+....................    } 
+....................  
+.................... } 
+0085:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0001   XT NOWDT PUT PROTECT

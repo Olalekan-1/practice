@@ -1,0 +1,36 @@
+#include <lesson2.h>
+
+void main()
+{
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b11111);
+   set_tris_b(0);
+   output_a(0);
+   output_b(0);
+   unsigned int8 sensor_data;
+   
+   while(TRUE)
+   {
+      sensor_data = input_a();
+      if (sensor_data == 7){
+         output_b(7);
+         delay_ms(1000);
+         output_b(0);
+         delay_ms(1000);
+      }
+      else if (sensor_data == 15){
+         output_b(15);
+         delay_ms(1000);
+         output_b(0);
+         delay_ms(1000);
+      }
+     else{
+               output_b(255);
+               delay_ms(1000);
+               output_b(255);
+               delay_ms(1000);
+     }
+   }
+
+}

@@ -1,0 +1,11 @@
+#include <Lcd Interfacing.h>
+
+void main()
+{
+
+	while(TRUE)
+	{
+		//TODO: User Code
+	}
+
+}

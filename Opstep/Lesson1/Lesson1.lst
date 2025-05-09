@@ -1,0 +1,107 @@
+CCS PCM C Compiler, Version 5.015, 5967               01-May-25 17:37
+
+               Filename:   C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\Lesson1\Lesson1.lst
+
+               ROM used:   51 words (5%)
+                           Largest free fragment is 973
+               RAM used:   5 (7%) at main() level
+                           6 (9%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   018
+0003:  NOP
+.................... #include <Lesson1.h> 
+.................... #include <16F84A.h> 
+.................... //////////// Standard Header file for the PIC16F84A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F84A 
+....................  
+.................... #list 
+....................  
+.................... #FUSES XT, NOWDT, PUT, PROTECT 
+.................... #use delay(crystal=4000000) 
+0004:  MOVLW  12
+0005:  MOVWF  04
+0006:  MOVF   00,W
+0007:  BTFSC  03.2
+0008:  GOTO   017
+0009:  MOVLW  01
+000A:  MOVWF  0D
+000B:  CLRF   0C
+000C:  DECFSZ 0C,F
+000D:  GOTO   00C
+000E:  DECFSZ 0D,F
+000F:  GOTO   00B
+0010:  MOVLW  4A
+0011:  MOVWF  0C
+0012:  DECFSZ 0C,F
+0013:  GOTO   012
+0014:  GOTO   015
+0015:  DECFSZ 00,F
+0016:  GOTO   009
+0017:  GOTO   02E (RETURN)
+....................  
+....................  
+.................... #use fast_io(a) 
+.................... #use fast_io(b) 
+....................  
+.................... void main(){ 
+0018:  MOVF   03,W
+0019:  ANDLW  1F
+001A:  MOVWF  03
+....................    output_a(0b000000); 
+001B:  CLRF   05
+....................    output_b(0b00000000); 
+001C:  CLRF   06
+....................    set_tris_a(0b111111); 
+001D:  MOVLW  3F
+001E:  BSF    03.5
+001F:  MOVWF  05
+....................    set_tris_b(0b00000000); 
+0020:  MOVLW  00
+0021:  MOVWF  06
+....................    output_a(0b000000); 
+0022:  BCF    03.5
+0023:  CLRF   05
+....................    output_b(0b00000000); 
+0024:  CLRF   06
+....................     
+....................    output_high(pin_b7); 
+0025:  BSF    06.7
+....................     
+....................    while(true){ 
+....................       if(input(pin_a1)==1){ 
+0026:  BTFSS  05.1
+0027:  GOTO   031
+....................          output_high(pin_b0); 
+0028:  BSF    06.0
+....................          delay_ms(3000); 
+0029:  MOVLW  0C
+002A:  MOVWF  11
+002B:  MOVLW  FA
+002C:  MOVWF  12
+002D:  GOTO   004
+002E:  DECFSZ 11,F
+002F:  GOTO   02B
+....................          output_low(pin_b0); 
+0030:  BCF    06.0
+....................       } 
+0031:  GOTO   026
+....................    } 
+.................... } 
+0032:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0001   XT NOWDT PUT PROTECT

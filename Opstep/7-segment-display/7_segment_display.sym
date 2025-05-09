@@ -1,0 +1,45 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+009-00A @READ_PROGRAM_MEMORY8.P1
+00C     @SCRATCH
+00D     @SCRATCH
+00D     _RETURN_
+00E     @SCRATCH
+00F     @SCRATCH
+011     main.sensor_data
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+000007  @cinit2
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\7-segment-display\
+
+Project Files:
+    7_segment_display.c                                     [09-May-25 12:41  CRC=98D25954]
+    7_segment_display.h                                     [09-May-25 11:22  CRC=00000000]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h [12-Nov-13 14:34  CRC=4E09ACDB]
+
+Source signature=34E5B30A
+
+Units:
+    7_segment_display (main)
+
+Compiler Settings:
+    Processor:      PIC16F84A
+    Pointer Size:   8
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   7_segment_display.xsym
+    Errors:      7_segment_display.err
+    Ext Symbols: 7_segment_display.esym
+    INHX8:       7_segment_display.hex
+    Symbols:     7_segment_display.sym
+    List:        7_segment_display.lst
+    Debug/COFF:  7_segment_display.cof
+    Project:     7_segment_display.ccspjt
+    Call Tree:   7_segment_display.tre
+    Statistics:  7_segment_display.STA

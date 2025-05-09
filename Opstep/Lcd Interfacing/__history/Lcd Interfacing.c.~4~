@@ -1,0 +1,17 @@
+#include <Lcd Interfacing.h>
+
+void main(){
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b11111);
+   set_tris_b(0b10000000);
+   output_a(0);
+   output_b(0);
+   
+   lcd_init();
+
+   while(TRUE){
+      //TODO: User Code
+   }
+
+}

@@ -1,0 +1,34 @@
+#include <Lcd Interfacing.h>
+
+void main(){
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b11111);
+   set_tris_b(0b10000000);
+   output_a(0);
+   output_b(0);
+   
+   lcd_init();
+   lcd_putc('\f');
+   char welcome[8] = "Welcome";
+   char name[15] = "Ahmed Olalekan";
+   unsigned int8 a;
+   
+  
+
+   while(TRUE){
+      lcd_gotoxy(1,1);
+      for(a = 0; a < sizeof(welcome); a++){
+         lcd_putc(welcome[a]);
+         delay_ms(1000);   
+      }
+      lcd_putc('\f');
+      lcd_gotoxy(1,2);
+      for(a = 0; a < sizeof(name); a++){
+         // lcd_putc(name[a]);
+         printf(lcd_putc "%s", name);
+         delay_ms(1000);   
+      }
+   }
+
+}

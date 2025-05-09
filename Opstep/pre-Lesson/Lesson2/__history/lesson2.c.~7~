@@ -1,0 +1,23 @@
+#include <lesson2.h>
+
+void main()
+{
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b11111);
+   set_tris_b(0);
+   output_a(0);
+   output_b(0);
+   unsigned int8 sensor_data;
+   
+   while(TRUE)
+   {
+      sensor_data = input_a();
+      if (sensor_data == 01010){
+        output_b(11100011);
+      }
+      else
+         output_b(11111110);
+   }
+
+}
