@@ -1,0 +1,40 @@
+#include <16F876A.h>
+
+#FUSES XT, NOWDT, PUT, NOBROWNOUT, NOLVP, CPD, NODEBUG, PROTECT
+#use delay(crystal=4000000)
+#use rs232(UART1)
+#use rs232(baud=9600, parity=N, xmit=pin_a0, rcv=pin_a1, stream=stream)
+
+void sys(){
+   output_a(0);
+   output_b(0);
+   output_c(0);
+   set_tris_a(0b000010);
+   set_tris_b(0);
+   set_tris_c(0);
+   output_a(0);
+   output_b(0);
+   output_c(0);
+}
+
+void display() {
+
+   putc(254);
+   putc(1);
+   putc(254);
+   putc(00);
+   printf("Welcome");
+   putc(254);
+   putc(192);
+   printf("This is the second line");
+}
+
+void display_v() {
+   output_high(pin_a0);
+   output_high(pin_a1);
+   printf(
+}
+
+
+
+

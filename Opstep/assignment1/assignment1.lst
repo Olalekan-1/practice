@@ -1,0 +1,56 @@
+CCS PCM C Compiler, Version 5.015, 5967               13-May-25 14:28
+
+               Filename:   C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\assignment1\assignment1.lst
+
+               ROM used:   9 words (1%)
+                           Largest free fragment is 1015
+               RAM used:   4 (6%) at main() level
+                           4 (6%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... #include <assignment1.h> 
+.................... #include <16F84A.h> 
+.................... //////////// Standard Header file for the PIC16F84A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F84A 
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES NOWDT                 	//No Watch Dog Timer 
+....................  
+.................... #use delay(crystal=4000000) 
+....................  
+....................  
+....................  
+.................... void main() 
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+.................... { 
+....................  
+.................... 	while(TRUE) 
+.................... 	{ 
+0007:  GOTO   007
+.................... 		//TODO: User Code 
+.................... 	} 
+....................  
+.................... } 
+0008:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3FF1   XT NOWDT PUT NOPROTECT

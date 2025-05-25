@@ -1,0 +1,24 @@
+[PROJECT]
+Target=assignment1.hex
+Processor_Text=PIC16F84A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=assignment1.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\assignment1\assignment1]
+Type=4
+[mru-list]
+1=assignment1.c
+[Opened Files]
+1=assignment1.c
+2=..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h
+3=assignment1.h
+4=
+[assignment1.c]
+Type=4
+[Units]
+Count=1
+1=assignment1 (main)

@@ -1,0 +1,11 @@
+#include <adc.h>
+
+void main(){
+   sys(); 
+
+   while(TRUE){
+      var = read_adc()
+      delay_ms(100);
+   }
+
+}

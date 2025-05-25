@@ -1,0 +1,40 @@
+#include <interupt.h>
+
+void main()
+{
+
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b00000);
+   set_tris_b(0b00000001);
+   output_a(0);
+   output_b(0);
+   clear_interrupt(int_ext);
+   ext_int_edge(h_to_l);
+   enable_interrupts(int_ext);
+   enable_interrupts(global);
+   
+   unsigned int8 y;
+   
+   
+   while(TRUE)
+   {
+      output_high(pin_b0);
+      delay_ms(1000);
+      output_low(pin_b0);
+      delay_ms(1000);
+      
+      ///if(!input(pin_a0)){  
+       ///  for(y = 0; y < 7; y++){
+         ///   output_high(pin_b7);
+           // delay_ms(500);
+          ///  output_low(pin_b7);
+           /// delay_ms(500);
+        //}
+   
+     //}
+        
+     
+   }
+
+}

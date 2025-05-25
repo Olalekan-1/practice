@@ -1,0 +1,13 @@
+#include <16F84A.h>
+
+#FUSES XT,NOWDT,PUT,PROTECT
+#use delay(crystal=4000000)
+
+unsigned int8 john = 0;
+
+#int_ext
+void isrext(){
+   unsigned int8 john = 0;
+   clear_interrupt(int_ext);
+   john = 14;
+}

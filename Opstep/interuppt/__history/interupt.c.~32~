@@ -1,0 +1,37 @@
+// main.c
+#include "interrupt.h"
+
+void run_interrupt(void){
+   unsigned int8 y = 0;
+   for(y = 0; y < 7; y++){
+      output_high(PIN_B7);
+      delay_ms(500);
+      output_low(PIN_B7);
+      delay_ms(500);
+   }
+}
+
+void main()
+{
+   set_tris_a(0b00000);
+   set_tris_b(0b00000001);   // RB0 as input, others output
+   output_a(0);
+   output_b(0);
+
+   clear_interrupt(INT_EXT);
+   ext_int_edge(H_TO_L);
+   enable_interrupts(INT_EXT);
+   enable_interrupts(GLOBAL);
+   
+   while(TRUE)
+   {
+       if (int_flag) {
+         run_interrupt();
+         int_flag = 0;   // Reset flag after handling
+      }
+
+      output_toggle(PIN_A0);  // Just to show system is alive
+      delay_ms(1000);
+   }
+}
+

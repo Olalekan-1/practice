@@ -1,0 +1,12 @@
+#include <traffic_light.h>
+
+void main()
+{
+   sys();
+   while(TRUE)
+   {
+     // traffic();
+     traffic_2();
+   }
+
+}

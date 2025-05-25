@@ -1,0 +1,49 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+009-00A @READ_PROGRAM_MEMORY8.P1
+00C     @SCRATCH
+00D     @SCRATCH
+00D     _RETURN_
+00E     @SCRATCH
+00F     @SCRATCH
+011     traffic_2.@SCRATCH1
+012     @delay_ms1.P1
+
+ROM Allocation:
+000004  sys
+000018  @delay_ms1
+00002C  traffic_2
+000065  MAIN
+000065  @cinit1
+000068  @cinit2
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\traffic_light\
+
+Project Files:
+    traffic_light.c                                         [24-May-25 13:30  CRC=D872A938]
+    traffic_light.h                                         [24-May-25 13:30  CRC=73932063]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h [12-Nov-13 14:34  CRC=4E09ACDB]
+
+Source signature=E8192351
+
+Units:
+    traffic_light (main)
+
+Compiler Settings:
+    Processor:      PIC16F84A
+    Pointer Size:   8
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   traffic_light.xsym
+    Errors:      traffic_light.err
+    Ext Symbols: traffic_light.esym
+    INHX8:       traffic_light.hex
+    Symbols:     traffic_light.sym
+    List:        traffic_light.lst
+    Debug/COFF:  traffic_light.cof
+    Project:     traffic_light.ccspjt
+    Call Tree:   traffic_light.tre
+    Statistics:  traffic_light.STA

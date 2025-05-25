@@ -1,0 +1,203 @@
+CCS PCM C Compiler, Version 5.015, 5967               24-May-25 13:50
+
+               Filename:   C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\traffic_light\traffic_light.lst
+
+               ROM used:   108 words (11%)
+                           Largest free fragment is 916
+               RAM used:   4 (6%) at main() level
+                           6 (9%) worst case
+               Stack used: 2 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   065
+0003:  NOP
+.................... #include <traffic_light.h> 
+.................... #include <16F84A.h> 
+.................... //////////// Standard Header file for the PIC16F84A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F84A 
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES  XT, NOWDT, PUT, PROTECT 
+....................  
+.................... #use delay(crystal=4000000) 
+*
+0018:  MOVLW  12
+0019:  MOVWF  04
+001A:  MOVF   00,W
+001B:  BTFSC  03.2
+001C:  GOTO   02B
+001D:  MOVLW  01
+001E:  MOVWF  0D
+001F:  CLRF   0C
+0020:  DECFSZ 0C,F
+0021:  GOTO   020
+0022:  DECFSZ 0D,F
+0023:  GOTO   01F
+0024:  MOVLW  4A
+0025:  MOVWF  0C
+0026:  DECFSZ 0C,F
+0027:  GOTO   026
+0028:  GOTO   029
+0029:  DECFSZ 00,F
+002A:  GOTO   01D
+002B:  RETURN
+....................  
+.................... void sys(){ 
+....................     
+....................    output_a(0); 
+*
+0004:  BSF    03.5
+0005:  CLRF   05
+0006:  BCF    03.5
+0007:  CLRF   05
+....................    output_b(0); 
+0008:  BSF    03.5
+0009:  CLRF   06
+000A:  BCF    03.5
+000B:  CLRF   06
+....................    set_tris_a(0); 
+000C:  MOVLW  00
+000D:  BSF    03.5
+000E:  MOVWF  05
+....................    set_tris_b(0); 
+000F:  MOVWF  06
+....................    output_a(0); 
+0010:  CLRF   05
+0011:  BCF    03.5
+0012:  CLRF   05
+....................    output_b(0); 
+0013:  BSF    03.5
+0014:  CLRF   06
+0015:  BCF    03.5
+0016:  CLRF   06
+0017:  GOTO   069 (RETURN)
+.................... } 
+....................  
+.................... void traffic(){ 
+....................     
+....................    output_high(pin_a0); 
+....................    delay_ms(4000); 
+....................    output_high(pin_a1); 
+....................    delay_ms(2000); 
+....................    output_low(pin_a0); 
+....................    output_low(pin_a1); 
+....................    output_high(pin_a2); 
+....................    delay_ms(4000); 
+....................    output_high(pin_a1); 
+....................    delay_ms(2000); 
+....................    output_low(pin_a2); 
+....................    output_low(pin_a1); 
+....................    
+.................... } 
+....................  
+.................... void traffic_2(){ 
+....................     
+....................       output_b(0b00100001); 
+*
+002C:  BSF    03.5
+002D:  CLRF   06
+002E:  MOVLW  21
+002F:  BCF    03.5
+0030:  MOVWF  06
+....................       delay_ms(4000); 
+0031:  MOVLW  10
+0032:  MOVWF  11
+0033:  MOVLW  FA
+0034:  MOVWF  12
+0035:  CALL   018
+0036:  DECFSZ 11,F
+0037:  GOTO   033
+....................       output_b(0b00010010); 
+0038:  BSF    03.5
+0039:  CLRF   06
+003A:  MOVLW  12
+003B:  BCF    03.5
+003C:  MOVWF  06
+....................       delay_ms(2000); 
+003D:  MOVLW  08
+003E:  MOVWF  11
+003F:  MOVLW  FA
+0040:  MOVWF  12
+0041:  CALL   018
+0042:  DECFSZ 11,F
+0043:  GOTO   03F
+....................       output_b(0); 
+0044:  BSF    03.5
+0045:  CLRF   06
+0046:  BCF    03.5
+0047:  CLRF   06
+....................       output_b(0b00001100); 
+0048:  BSF    03.5
+0049:  CLRF   06
+004A:  MOVLW  0C
+004B:  BCF    03.5
+004C:  MOVWF  06
+....................       delay_ms(4000); 
+004D:  MOVLW  10
+004E:  MOVWF  11
+004F:  MOVLW  FA
+0050:  MOVWF  12
+0051:  CALL   018
+0052:  DECFSZ 11,F
+0053:  GOTO   04F
+....................       output_b(0b00010010); 
+0054:  BSF    03.5
+0055:  CLRF   06
+0056:  MOVLW  12
+0057:  BCF    03.5
+0058:  MOVWF  06
+....................       delay_ms(2000); 
+0059:  MOVLW  08
+005A:  MOVWF  11
+005B:  MOVLW  FA
+005C:  MOVWF  12
+005D:  CALL   018
+005E:  DECFSZ 11,F
+005F:  GOTO   05B
+....................       output_b(0); 
+0060:  BSF    03.5
+0061:  CLRF   06
+0062:  BCF    03.5
+0063:  CLRF   06
+0064:  GOTO   06A (RETURN)
+....................        
+....................        
+....................  
+.................... } 
+....................  
+....................  
+....................  
+.................... void main() 
+0065:  MOVF   03,W
+0066:  ANDLW  1F
+0067:  MOVWF  03
+.................... { 
+....................    sys(); 
+0068:  GOTO   004
+....................    while(TRUE) 
+....................    { 
+....................      // traffic(); 
+....................      traffic_2(); 
+0069:  GOTO   02C
+006A:  GOTO   069
+....................    } 
+....................  
+.................... } 
+006B:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0001   XT NOWDT PUT PROTECT

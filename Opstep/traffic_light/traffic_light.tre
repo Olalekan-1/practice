@@ -1,0 +1,9 @@
+ÀÄtraffic_light
+   ÀÄMAIN  0/7  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄsys  0/20  Ram=0
+      ÀÄtraffic_2  0/57  Ram=1
+         ÃÄ@delay_ms1  0/20  Ram=1
+         ÃÄ@delay_ms1  0/20  Ram=1
+         ÃÄ@delay_ms1  0/20  Ram=1
+         ÀÄ@delay_ms1  0/20  Ram=1

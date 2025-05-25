@@ -1,0 +1,25 @@
+#include <serial_con.h>
+
+void main()
+{
+   
+   sys();
+   setup_uart(9600);
+   
+   putc(254);
+   putc(1);
+   putc(254);
+   putc(00);
+   printf("Welcome");
+  // putc(254);
+  // putc(192);
+  // printf("This is the second line");
+   
+
+   while(TRUE)
+   {
+      
+      //TODO: User Code
+   }
+
+}

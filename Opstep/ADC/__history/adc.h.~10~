@@ -1,0 +1,40 @@
+#include <16F876A.h>
+#device ADC=8
+#FUSES XT, NOWDT, PUT,NOBROWNOUT, NOBROWNOUT, NOLVP, NOCPD, NODEBUG, PROTECT
+#use delay(crystal=4000000)
+
+unsigned int8 var = 0;
+unsigned int8 volt = 0;
+
+#define LCD_DATA_PORT getenv("SFR:PORTB")
+#define LCD_ENABLE_PIN  PIN_B2
+#define LCD_RS_PIN      PIN_B0
+#define LCD_RW_PIN      PIN_B1
+#define LCD_DATA4       PIN_B4
+#define LCD_DATA5       PIN_B5
+#define LCD_DATA6       PIN_B6
+#define LCD_DATA7       PIN_B7
+#include "lcd.c"
+
+void sys(){
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b000001);
+   set_tris_b(0);
+   set_tris_c(0);
+   lcd_init();
+   lcd_putc('\f');
+   
+   setup_adc(ADC_CLOCK_INTERNAL);
+   setup_adc_ports(AN0);
+   set_adc_channel(0);
+}
+
+void lcd_clear(){
+   delay_ms(1000);
+   
+}
+
+
+// char intro[10] = "ADC LINE 1"
+

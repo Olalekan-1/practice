@@ -1,0 +1,54 @@
+#include <16F84A.h>
+#use fast_io(a)
+#use fast_io(b)
+
+#FUSES  XT, NOWDT, PUT, PROTECT
+
+#use delay(crystal=4000000)
+
+#define inc pin_a0
+#define dec pin_a1
+#define unit_en pin_a3
+#define tens_en pin_a4
+
+unsigned int biggi = 0;
+unsigned int flag = 0;
+
+#int_timer0
+void isrtimer0(){
+   set_timer0(100);
+   unsigned int8 unit = biggi % 10;
+   unsigned int8 tens = biggi / 10;
+   flag = ~flag;
+   
+   
+   
+}
+
+
+
+
+void sys(){
+   
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b11000);
+   set_tris_b(0);
+   output_a(0);
+   output_b(0);
+   
+  // setup_timer_0(T0_INTERNAL)
+   SETUP_TIMER_0((T0_INTERNAL, T0_DIV_64, T0_8_BIT));
+   SET_TIMER0(100);
+   
+   clear_interrupt(int_timer0);
+   enable_interrupts(int_timer0);
+   enable_interrupts(global);
+}
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+009-00A @READ_PROGRAM_MEMORY8.P1
+00C     @SCRATCH
+00D     @SCRATCH
+00D     _RETURN_
+00E     @SCRATCH
+00F     @SCRATCH
+010     j
+011     @GETCH_1_.@SCRATCH1
+011     sys.@SCRATCH1
+012     @PUTCHAR_1_.P1
+
+ROM Allocation:
+000004  @const509.call
+000010  @PUTCHAR_1_
+000032  sys
+000052  @GETCH_1_
+000077  MAIN
+000077  @cinit1
+00007F  @cinit2
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\serial_com\
+
+Project Files:
+    serial_con1.c                                           [22-May-25 16:56  CRC=00000000]
+    serial_con1.h                                           [22-May-25 16:56  CRC=CF12E969]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h [12-Nov-13 14:34  CRC=4E09ACDB]
+
+Source signature=6B26431F
+
+Units:
+    serial_con1 (main)
+
+Compiler Settings:
+    Processor:      PIC16F84A
+    Pointer Size:   8
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   serial_con1.xsym
+    Errors:      serial_con1.err
+    Ext Symbols: serial_con1.esym
+    INHX8:       serial_con1.hex
+    Symbols:     serial_con1.sym
+    List:        serial_con1.lst
+    Debug/COFF:  serial_con1.cof
+    Project:     serial_con1.ccspjt
+    Call Tree:   serial_con1.tre
+    Statistics:  serial_con1.STA

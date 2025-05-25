@@ -1,0 +1,7 @@
+#include <16F876A.h>
+
+#FUSES XT, NOWDT, PUT, NOBROWNOUT, NOLVP, CPD, NODEBUG, PROTECT
+
+
+#use delay(crystal=4000000)
+

@@ -1,0 +1,67 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+009-00A @READ_PROGRAM_MEMORY8.P1
+00C     @SCRATCH
+00D     @SCRATCH
+00D     _RETURN_
+00E     @SCRATCH
+00F     @SCRATCH
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     biggi
+019     flag
+01A     isrtimer0.unit
+01B     isrtimer0.tens
+01C     display.digit
+01C     @DIV88.P1
+01C     isrtimer0.@SCRATCH1
+01D     @DIV88.P1
+01E     @DIV88.@SCRATCH1
+
+ROM Allocation:
+000036  SEGMENTS.call
+00003A  SEGMENTS.data
+000044  @DIV88
+000059  isrtimer0
+00007D  display
+000087  sys
+00009B  MAIN
+00009B  @cinit1
+0000A0  @cinit2
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\Timer\
+
+Project Files:
+    timer.c                                                 [25-May-25 12:30  CRC=F817D64F]
+    timer.h                                                 [25-May-25 12:39  CRC=33CE9C62]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h [12-Nov-13 14:34  CRC=4E09ACDB]
+
+Source signature=C7F9CC67
+
+Units:
+    timer (main)
+
+Compiler Settings:
+    Processor:      PIC16F84A
+    Pointer Size:   8
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   timer.xsym
+    Errors:      timer.err
+    Ext Symbols: timer.esym
+    INHX8:       timer.hex
+    Symbols:     timer.sym
+    List:        timer.lst
+    Debug/COFF:  timer.cof
+    Project:     timer.ccspjt
+    Call Tree:   timer.tre
+    Statistics:  timer.STA

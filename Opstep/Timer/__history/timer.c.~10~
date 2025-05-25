@@ -1,0 +1,21 @@
+#include <timer.h>
+
+void main() {
+   sys();
+   while(TRUE) {
+      if(input(inc)) {
+         // delay_ms(20);  // Simple debounce
+         while(input(inc));
+         biggi = (biggi + 1) % 100;
+      }
+
+      if(input(dec)) {
+         // delay_ms(20);
+         while(input(dec));
+         if(biggi == 0)
+            biggi = 99;
+         else
+            biggi--;
+      }
+   }
+  }

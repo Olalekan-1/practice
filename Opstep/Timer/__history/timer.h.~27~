@@ -1,0 +1,67 @@
+#include <16F84A.h>
+#fuses XT, NOWDT, PUT, PROTECT
+#use delay(crystal=4000000)
+#use fast_io(a)
+#use fast_io(b)
+
+#define inc     pin_a3
+#define dec     pin_a4
+#define unit_en pin_a0
+#define tens_en pin_a1
+
+unsigned int8 biggi = 0;
+unsigned int8 flag = 0;
+
+inline static unsigned int8 display(unsigned int8 digit) {
+   const unsigned int8 SEGMENTS[10] = {
+      0b00111111, // 0
+      0b00000110, // 1
+      0b01011011, // 2
+      0b01001111, // 3
+      0b01100110, // 4
+      0b01101101, // 5
+      0b01111101, // 6
+      0b00000111, // 7
+      0b01111111, // 8
+      0b01101111  // 9
+   };
+   return SEGMENTS[digit % 10];
+}
+
+#int_timer0
+void isrtimer0() {
+   set_timer0(100);
+
+   unsigned int8 unit = biggi % 10;
+   unsigned int8 tens = biggi / 10;
+
+   flag = ~flag;
+
+
+   if(flag) {
+   
+      output_high(unit_en);
+      output_high(tens_en);
+      output_b(display(unit));
+      output_low(unit_en);
+   } else {
+      output_high(unit_en);
+      output_high(tens_en);
+      output_b(display(tens));
+      output_low(tens_en);
+   }
+}
+
+void sys() {
+   set_tris_a(0b11000);
+   set_tris_b(0);
+   output_a(0);
+   output_b(0);
+
+   setup_timer_0(T0_INTERNAL | T0_DIV_64 | T0_8_BIT); // 4MHz/64 = 62.5kHz timer tick
+   set_timer0(100);
+
+   clear_interrupt(INT_TIMER0);
+   enable_interrupts(INT_TIMER0);
+   enable_interrupts(GLOBAL);
+}

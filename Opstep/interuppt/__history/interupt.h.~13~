@@ -1,0 +1,14 @@
+// interrupt.h
+#include <16F84A.h>
+
+#FUSES XT,NOWDT,PUT,PROTECT
+#use delay(crystal=4000000)
+
+int1 int_flag = 0;   // Initially 0 = no interrupt
+
+#int_ext
+void isrext() {
+   int_flag = 1;                     // Mark that interrupt occurred
+   clear_interrupt(INT_EXT);        // Always clear external interrupt!
+}
+

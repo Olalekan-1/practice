@@ -1,0 +1,16 @@
+#include <adc.h>
+
+void main()
+{
+
+   output_a(0);
+   output_b(0);
+   lcd_init();
+   lcd_putc('\f');
+   
+   while(TRUE)
+   {
+      //TODO: User Code
+   }
+
+}

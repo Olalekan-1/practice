@@ -1,0 +1,16 @@
+#include <serial_con.h>
+
+void main()
+{
+   
+   sys();
+   setup_uart(9600);
+   printf("Hello");
+   
+
+   while(TRUE)
+   {
+      //TODO: User Code
+   }
+
+}

@@ -1,0 +1,8 @@
+ÀÄserial_con1
+   ÀÄMAIN  0/17  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄsys  0/32  Ram=1
+      ³  ÃÄ@const509  0/12  Ram=0
+      ³  ÀÄ@PUTCHAR_1_  0/34  Ram=1
+      ÃÄ@GETCH_1_  0/37  Ram=1
+      ÀÄ@PUTCHAR_1_  0/34  Ram=1

@@ -1,0 +1,16 @@
+#include <serial_con.h>
+
+void main()
+{
+   
+   sys();
+   setup_uart(9600);
+   delay_ms(1000); 
+
+   while(TRUE)
+   {
+      
+      //TODO: User Code
+   }
+
+}

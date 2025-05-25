@@ -1,0 +1,27 @@
+#include <16F84A.h>
+#use fast_io(a)
+#use fast_io(b)
+
+#FUSES  XT, NOWDT, PUT, PROTECT
+
+#use delay(crystal=4000000)
+
+void sys(){
+   
+   output_a(0);
+   output_b(0);
+   set_tris_a(0);
+   set_tris_b(0);
+   output_a(0);
+   output_b(0);
+   
+  // setup_timer_0(T0_INTERNAL)
+   SETUP_TIMER_0(T0_INTERNAL, 5, 0);
+   SET_TIMER0(100);
+   
+   clear_interrupt(int_timer0);
+   enable_interrupts(int_timer0);
+   enable_interrupts(global);
+}
+
+

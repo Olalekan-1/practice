@@ -1,0 +1,25 @@
+[PROJECT]
+Target=interupt.hex
+Processor_Text=PIC16F84A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=interupt.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\interuppt\interupt]
+Type=4
+[mru-list]
+1=interupt.c
+[Opened Files]
+1=interupt.c
+2=..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h
+3=interupt.h
+4=
+5=
+[interupt.c]
+Type=4
+[Units]
+Count=1
+1=interupt (main)

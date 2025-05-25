@@ -1,0 +1,37 @@
+#include <16F84A.h>
+
+#FUSES  XT, NOWDT, PUT, PROTECT
+
+#use delay(crystal=4000000)
+
+void sys(){
+   
+   output_a(0);
+   output_b(0);
+   set_tris_a(0);
+   set_tris_b(0);
+   output_a(0);
+   output_b(0);
+}
+
+void traffic(){
+   
+   output_high(pin_a0);
+   delay_ms(4000);
+   output_high(pin_a1);
+   delay_ms(2000);
+   output_low(pin_a0);
+   output_low(pin_a1);
+   output_high(pin_a2);
+   delay_ms(4000);
+   output_high(pin_a1);
+   delay_ms(2000);
+   output_low(pin_a2);
+   output_low(pin_a1);
+  
+}
+
+void traffic_2(){
+
+}
+

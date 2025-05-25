@@ -1,0 +1,22 @@
+#include "interupt.h"
+
+
+void main()
+{
+   sys();
+   while(TRUE)
+   {
+      if (!int_flag) {
+         disable_interrupts(GLOBAL); // Optional: prevent repeated triggers
+         run_interrupt();            // long delay code runs outside ISR
+         int_flag = 1;               // reset flag
+         enable_interrupts(GLOBAL);  // re-enable
+      }
+
+      output_high(PIN_A0);
+      delay_ms(1000);
+      output_low(PIN_A0);
+      delay_ms(1000);
+   }
+}
+

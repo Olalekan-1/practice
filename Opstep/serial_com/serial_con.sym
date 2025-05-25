@@ -1,0 +1,78 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @TRIS_C
+021-022 @sprintf_string
+023     @PSTRINGC7_9600_62_63.@SCRATCH1
+023     @PSTRINGC7_617.@SCRATCH1
+023     MAIN.@SCRATCH1
+024     @delay_ms1.P1
+024     @PSTRINGC7_9600_62_63.@SCRATCH2
+024     @PSTRINGC7_617.@SCRATCH2
+025     @PSTRINGC7_9600_62_63.@SCRATCH3
+025     @PSTRINGC7_617.@SCRATCH3
+026     @SPRINTF.P1
+026     @PSTRINGC7_9600_62_63.@SCRATCH4
+026     @PSTRINGC7_617.@SCRATCH4
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const611.call
+000008  @const613.call
+000014  @const615.call
+000018  sys
+00003C  @delay_ms1
+000053  @PSTRINGC7_9600_62_63
+0000AB  display
+0000D4  @SPRINTF
+0000E1  display_v
+0000F1  @PSTRINGC7_617
+000148  MAIN
+000148  @cinit1
+000162  @cinit2
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\serial_com\
+
+Project Files:
+    serial_con.c                                            [22-May-25 17:17  CRC=D872A938]
+    serial_con.h                                            [22-May-25 17:19  CRC=61A3DA62]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F876A.h [12-Nov-13 14:35  CRC=7FE1E080]
+
+Source signature=39DA449A
+
+Units:
+    serial_con (main)
+
+Compiler Settings:
+    Processor:      PIC16F876A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   serial_con.xsym
+    Errors:      serial_con.err
+    Ext Symbols: serial_con.esym
+    INHX8:       serial_con.hex
+    Symbols:     serial_con.sym
+    List:        serial_con.lst
+    Debug/COFF:  serial_con.cof
+    Project:     serial_con.ccspjt
+    Call Tree:   serial_con.tre
+    Statistics:  serial_con.STA

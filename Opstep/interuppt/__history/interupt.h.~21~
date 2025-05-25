@@ -1,0 +1,43 @@
+#include <16F84A.h>
+
+#FUSES XT,NOWDT,PUT,PROTECT
+#use delay(crystal=4000000)
+
+int1 int_flag = 1;
+
+void run_interrupt(void);
+
+#int_ext
+void isrext() {
+   if (!input(PIN_B0)) { 
+      int_flag = 0;
+   }
+   output_high(pin_b7);
+   clear_interrupt(int_ext);
+   // run_interrupt();
+}
+
+void run_interrupt(void){
+   unsigned int8 y = 0;
+   for(y = 0; y < 7; y++){
+      output_high(pin_b7);
+      delay_ms(500);
+      output_low(pin_b7);
+      delay_ms(500);
+   }
+}
+
+void sys(){
+
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b00000);
+   set_tris_b(0b00000001);
+   output_a(0);
+   output_b(0);
+   clear_interrupt(int_ext);
+   ext_int_edge(h_to_l);
+   enable_interrupts(int_ext);
+   enable_interrupts(global);
+}
+

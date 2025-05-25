@@ -1,0 +1,44 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+009-00A @READ_PROGRAM_MEMORY8.P1
+00C     @SCRATCH
+00D     @SCRATCH
+00D     _RETURN_
+00E     @SCRATCH
+00F     @SCRATCH
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+000007  @cinit2
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\assignment1\
+
+Project Files:
+    assignment1.c                                           [13-May-25 14:28  CRC=00000000]
+    assignment1.h                                           [13-May-25 14:28  CRC=00000000]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h [12-Nov-13 14:34  CRC=4E09ACDB]
+
+Source signature=9C1359B6
+
+Units:
+    assignment1 (main)
+
+Compiler Settings:
+    Processor:      PIC16F84A
+    Pointer Size:   8
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   assignment1.xsym
+    Errors:      assignment1.err
+    Ext Symbols: assignment1.esym
+    INHX8:       assignment1.hex
+    Symbols:     assignment1.sym
+    List:        assignment1.lst
+    Debug/COFF:  assignment1.cof
+    Project:     assignment1.ccspjt
+    Call Tree:   assignment1.tre
+    Statistics:  assignment1.STA

@@ -1,0 +1,22 @@
+#include <adc.h>
+
+void main(){
+   sys();
+
+   while(TRUE){
+     
+      
+      lcd_gotoxy(1,1);
+      lcd_putc("ADC LINE 1");
+      delay_ms(1000);
+      lcd_putc('\n');
+      lcd_gotoxy(1,2);
+      var = read_adc();
+      delay_ms(100);
+      
+      printf(lcd_putc "%g", var * 0.0196);
+      delay_ms(1000);
+      
+   }
+
+}

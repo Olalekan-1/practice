@@ -1,0 +1,24 @@
+[PROJECT]
+Target=traffic_light.hex
+Processor_Text=PIC16F84A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=traffic_light.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\traffic_light\traffic_light]
+Type=4
+[mru-list]
+1=traffic_light.c
+[Opened Files]
+1=traffic_light.c
+2=traffic_light.h
+3=..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h
+4=
+[traffic_light.c]
+Type=4
+[Units]
+Count=1
+1=traffic_light (main)

@@ -1,0 +1,61 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+009-00A @READ_PROGRAM_MEMORY8.P1
+00C     @SCRATCH
+00D     @SCRATCH
+00D     _RETURN_
+00E     @SCRATCH
+00F     @SCRATCH
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018.0   flag
+019     run_interrupt.y
+019     MAIN.@SCRATCH1
+01A     run_interrupt.@SCRATCH1
+01B     @delay_ms1.P1
+
+ROM Allocation:
+000036  isrext
+00003B  sys
+000056  @delay_ms1
+00006A  run_interrupt
+00008A  MAIN
+00008A  @cinit1
+00008E  @cinit2
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\interuppt\
+
+Project Files:
+    interupt.c                                              [25-May-25 15:52  CRC=5D082673]
+    interupt.h                                              [25-May-25 15:44  CRC=453F744F]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h [12-Nov-13 14:34  CRC=4E09ACDB]
+
+Source signature=3E5AF478
+
+Units:
+    interupt (main)
+
+Compiler Settings:
+    Processor:      PIC16F84A
+    Pointer Size:   8
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   interupt.xsym
+    Errors:      interupt.err
+    Ext Symbols: interupt.esym
+    INHX8:       interupt.hex
+    Symbols:     interupt.sym
+    List:        interupt.lst
+    Debug/COFF:  interupt.cof
+    Project:     interupt.ccspjt
+    Call Tree:   interupt.tre
+    Statistics:  interupt.STA

@@ -1,0 +1,15 @@
+#include <timer.h>
+
+void main()
+{
+   sys();
+   while(TRUE)
+   {
+    if(input(inc)){
+      while(input(inc));
+      biggi++;
+      if(biggi > 99) {biggi == 99}
+    }
+   }
+
+}

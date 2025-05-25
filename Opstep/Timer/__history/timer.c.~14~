@@ -1,0 +1,23 @@
+void main() {
+   sys();
+   while(TRUE) {
+      if (!input(inc)) { // Active LOW if pulled up
+         delay_ms(50);   // debounce delay
+         if (!input(inc)) {  // still pressed?
+            biggi++;
+            if (biggi > 99) biggi = 0;
+            while (!input(inc)); // wait for release
+         }
+      }
+
+      if (!input(dec)) {
+         delay_ms(50);   // debounce delay
+         if (!input(dec)) {
+            if (biggi > 0) biggi--;
+            else biggi = 99; // wrap around
+            while (!input(dec)); // wait for release
+         }
+      }
+   }
+}
+

@@ -1,0 +1,33 @@
+#include <interupt.h>
+
+void main()
+{
+
+   output_a(0);
+   output_b(0);
+   set_tris_a(0b00001);
+   set_tris_b(0);
+   output_a(0);
+   output_b(0);
+   
+   unsigned int8 y = 0;
+   
+   while(TRUE)
+   {
+      if(!input(pin_a0)){
+         
+         output_high(pin_b0);
+         delay_ms(1000);
+         output_low(pin_b0);
+         delay_ms(1000);
+         for(y = 0; y < 7; y++){
+              output_high(pin_b7);
+              delay_ms(500);
+              output_low(pin_b7);
+              delay_ms(500);
+         }
+   
+      }
+   }
+
+}

@@ -1,0 +1,24 @@
+[PROJECT]
+Target=serial_con1.hex
+Processor_Text=PIC16F84A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=serial_con1.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\serial_com\serial_con1]
+Type=4
+[mru-list]
+1=serial_con1.c
+[Opened Files]
+1=serial_con1.c
+2=serial_con1.h
+3=..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h
+4=
+[serial_con1.c]
+Type=4
+[Units]
+Count=1
+1=serial_con1 (main)

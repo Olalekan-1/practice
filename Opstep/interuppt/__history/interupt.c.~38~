@@ -1,0 +1,20 @@
+#include "interupt.h"
+
+
+void main()
+{
+   sys();
+   while(TRUE)
+{
+//!       if (!int_flag) {
+//!        run_interrupt();
+//!      }
+
+      output_high(pin_a0);
+      delay_ms(1000);
+      output_low(pin_a0);
+      delay_ms(1000);
+      
+   }
+
+}

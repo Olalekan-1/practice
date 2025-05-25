@@ -1,0 +1,58 @@
+
+ROM used:   377/8192 (5%)
+            377/8192 (5%) including unused fragments
+
+            0.6 Average locations per line
+            13.5 Average locations per statement
+
+RAM used:   9/368 (2%) at main() level
+            12/368 (3%) worst case
+
+Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   20     8  29  serial_con.c
+   41    20  71  serial_con.h
+  620     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F876A.h
+----- -----
+  681    28 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     23   6    1             @delay_ms1
+0     36  10    0   172  1.4  sys
+0     41  11    0   152  1.3  display
+0      4   1    0             @const611
+0     88  23    4             @PSTRINGC7_9600_62_63
+0     12   3    0             @const613
+0    103  27    0    61  1.4  display_v
+0      4   1    0    61  1.5  @const615
+0     13   3    1             @SPRINTF
+ Inline         4   102  1.6  @PSTRINGC7_617
+0     49  13    1   102  1.6  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               6
+    Statements              28
+    Comments                114
+    Volume (V)              1058
+    Difficulty (D)          8.4
+    Effort to implement (E) 8903
+    Time to implement (T)   8 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    142
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   373  1671  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

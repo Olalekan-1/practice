@@ -1,0 +1,51 @@
+
+ROM used:   186/1024 (18%)
+            186/1024 (18%) including unused fragments
+
+            0.4 Average locations per line
+            4.5 Average locations per statement
+
+RAM used:   14/68 (21%) at main() level
+            19/68 (28%) worst case
+
+Stack used: 3 worst case (1 in main + 2 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   22    17  41  timer.c
+   68    24  59  timer.h
+  404     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F84A.h
+----- -----
+  494    41 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     14   8    0   179  3.5  @const505
+ Inline         1   181  3.5  display
+0     46  25    1   388  5.0  isrtimer0
+0     21  11    3   388  5.0  @DIV88
+0     20  11    0   197  1.8  sys
+0     31  17    0   354  6.0  MAIN
+ Inline         0   333  5.0  @cinit1
+
+Program metrics:
+    Functions               7
+    Statements              41
+    Comments                70
+    Volume (V)              3105
+    Difficulty (D)          29.9
+    Effort to implement (E) 92993
+    Time to implement (T)   1 hours, 26 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   10
+    Maintainability (MI)    61
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00035    50  0  
+00036-003FF   132  838  
+
+
+

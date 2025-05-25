@@ -1,0 +1,6 @@
+#include <16F84A.h>
+
+#FUSES LP,XT,HS,RC,NOWDT,WDT,PUT,NOPUT,PROTECT,NOPROTECT
+
+#use delay(crystal=4000000)
+

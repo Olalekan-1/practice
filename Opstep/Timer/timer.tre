@@ -1,0 +1,11 @@
+ÀÄtimer
+   ÃÄMAIN  0/31  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄsys  0/20  Ram=0
+   ÀÄisrtimer0  0/46  Ram=1
+      ÃÄ@DIV88  0/21  Ram=3
+      ÃÄ@DIV88  0/21  Ram=3
+      ÃÄdisplay  (Inline)  Ram=1
+      ³  ÀÄ@const505  0/14  Ram=0
+      ÀÄdisplay  (Inline)  Ram=1
+         ÀÄ*
