@@ -1,0 +1,78 @@
+#include <16F876A.h>
+#device ADC=8
+#use i2c(master, sda=pin_c4, scl=pin_c3, FAST)
+#use fast_io(a)
+#use fast_io(b)
+#use fast_io(c)
+#FUSES XT, NOWDT, PUT, NOBROWNOUT, NOLVP, CPD, NODEBUG
+#use delay(crystal=4000000)
+
+unsigned int8 temp = 0;
+unsigned int16 memory_location = 0;
+unsigned int8 y = 0;
+
+#define STORE pin_a4
+#define RECALL pin_a5
+
+#define LCD_DATA_PORT getenv("SFR:PORTb")
+#define LCD_ENABLE_PIN  PIN_b3                              
+#define LCD_RS_PIN      PIN_b1                                   
+#define LCD_RW_PIN      PIN_b2                                    
+#define LCD_DATA4       PIN_b4                                    
+#define LCD_DATA5       PIN_b5
+#define LCD_DATA6       PIN_b6   
+#define LCD_DATA7       PIN_b7
+#include <lcd.c>
+
+
+
+
+
+
+void sys_init(){
+   output_a(0);
+   output_b(0);
+   output_c(0);
+   set_tris_a(0b111111);
+   set_tris_b(0);
+   set_tris_c(0);
+   output_a(0);
+   output_b(0);
+   output_c(0);
+   
+   SETUP_ADC(ADC_CLOCK_INTERNAL);
+   SETUP_ADC_PORTS(AN0_AN1_VSS_VREF);
+   SET_ADC_CHANNEL(0);
+   delay_ms(100);
+   
+   lcd_init();
+   lcd_putc('\f');
+   
+}
+
+void lcd_line(int8 line){
+
+   lcd_gotoxy(1,line);
+}
+
+void i2c_eeprom_write(unsigned int8 addrh, unsigned int8 addrl, char data){
+   i2c_start();
+   i2c_write(0xA0);
+   i2c_write(addrh);
+   i2c_write(addrl);
+   i2c_write(data);
+   i2c_stop();
+   delay_ms(5);   
+}
+
+void write_eeprom_i2c(char data){
+   // memory_location = make16(read_eeprom(0), read_eeprom(1));
+  
+   i2c_eeprom_write(make8(memory_location, 1),  make8(memory_location, 0), data);
+   memory_location++;
+   write_eeprom(0, make8(memory_location, 0));
+   delay_ms(10);
+   write_eeprom(1, make8(memory_location, 1));
+   delay_ms(10);
+}
+

@@ -1,0 +1,18 @@
+#include <_rtcc.h>
+
+void main()
+{
+   
+   sys_init();
+   //idle();
+  while(TRUE){
+  //set_days();
+   {
+     switch(menu_state) {
+       case 4:
+         set_days();
+         break;
+     
+   // }
+   }
+}

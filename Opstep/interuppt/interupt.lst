@@ -1,9 +1,9 @@
-CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
+CCS PCM C Compiler, Version 5.015, 5967               06-Jun-25 22:04
 
                Filename:   C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\interuppt\interupt.lst
 
-               ROM used:   187 words (18%)
-                           Largest free fragment is 837
+               ROM used:   172 words (17%)
+                           Largest free fragment is 852
                RAM used:   14 (21%) at main() level
                            16 (24%) worst case
                Stack used: 3 locations (2 in main + 1 for interrupts)
@@ -12,7 +12,7 @@ CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
 *
 0000:  MOVLW  00
 0001:  MOVWF  0A
-0002:  GOTO   08A
+0002:  GOTO   08D
 0003:  NOP
 0004:  BTFSC  03.5
 0005:  GOTO   00A
@@ -105,17 +105,18 @@ CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
 0068:  GOTO   05B
 0069:  RETURN
 ....................  
-.................... unsigned int1 flag = TRUE; 
+.................... unsigned int1 flag = FALSE; 
 ....................  
 .................... void run_interrupt(void); 
 ....................  
 .................... #int_ext 
 .................... void isrext() { 
-....................    flag = FALSE; 
+....................    disable_interrupts(int_ext); 
 *
-0036:  BCF    18.0
-....................    clear_interrupt(int_ext); 
-0037:  BCF    0B.1
+0036:  BCF    0B.4
+....................    flag = TRUE; 
+0037:  BSF    18.0
+....................    // clear_interrupt(int_ext); 
 0038:  BCF    0B.1
 0039:  BCF    0A.3
 003A:  GOTO   023
@@ -123,9 +124,9 @@ CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
 ....................  
 .................... void run_interrupt(void){ 
 ....................  
-....................    flag = TRUE; 
+....................    flag = FALSE; 
 *
-006A:  BSF    18.0
+006A:  BCF    18.0
 ....................    unsigned int8 y = 0; 
 006B:  CLRF   19
 ....................    for(y = 0; y < 7; y++){ 
@@ -133,7 +134,7 @@ CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
 006D:  MOVF   19,W
 006E:  SUBLW  06
 006F:  BTFSS  03.0
-0070:  GOTO   089
+0070:  GOTO   08C
 ....................       output_high(pin_b7); 
 0071:  BSF    03.5
 0072:  BCF    06.7
@@ -160,10 +161,16 @@ CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
 0084:  CALL   056
 0085:  DECFSZ 1A,F
 0086:  GOTO   082
-0087:  INCF   19,F
-0088:  GOTO   06D
+....................       flag = TRUE; 
+0087:  BSF    18.0
+....................       clear_interrupt(int_ext); 
+0088:  BCF    0B.1
+....................       enable_interrupts(int_ext); 
+0089:  BSF    0B.4
+008A:  INCF   19,F
+008B:  GOTO   06D
 ....................    } 
-0089:  RETURN
+008C:  GOTO   094 (RETURN)
 .................... } 
 ....................  
 .................... void sys(){ 
@@ -205,7 +212,7 @@ CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
 0053:  BSF    0B.4
 ....................    enable_interrupts(global); 
 0054:  BSF    0B.7
-0055:  GOTO   08F (RETURN)
+0055:  GOTO   092 (RETURN)
 .................... } 
 ....................  
 ....................  
@@ -213,71 +220,51 @@ CCS PCM C Compiler, Version 5.015, 5967               25-May-25 15:52
 ....................  
 .................... void main() 
 *
-008A:  MOVF   03,W
-008B:  ANDLW  1F
-008C:  MOVWF  03
-008D:  BSF    18.0
+008D:  MOVF   03,W
+008E:  ANDLW  1F
+008F:  MOVWF  03
+0090:  BCF    18.0
 .................... { 
 ....................    sys(); 
-008E:  GOTO   03B
+0091:  GOTO   03B
 ....................    while(TRUE) 
 ....................    { 
-....................       if(!input(pin_b1)) run_interrupt(); 
-008F:  BSF    03.5
-0090:  BSF    06.1
-0091:  BCF    03.5
-0092:  BTFSS  06.1
-0093:  CALL   06A
+....................       if(flag) run_interrupt(); 
+0092:  BTFSC  18.0
+0093:  GOTO   06A
+....................        
 ....................       output_high(PIN_A0); 
 0094:  BSF    03.5
 0095:  BCF    05.0
 0096:  BCF    03.5
 0097:  BSF    05.0
-....................       if(!input(pin_b1)) run_interrupt(); 
-0098:  BSF    03.5
-0099:  BSF    06.1
-009A:  BCF    03.5
-009B:  BTFSS  06.1
-009C:  CALL   06A
 ....................       delay_ms(1000); 
-009D:  MOVLW  04
-009E:  MOVWF  19
-009F:  MOVLW  FA
-00A0:  MOVWF  1B
-00A1:  CALL   056
-00A2:  DECFSZ 19,F
-00A3:  GOTO   09F
-....................       if(!input(pin_b1)) run_interrupt(); 
-00A4:  BSF    03.5
-00A5:  BSF    06.1
-00A6:  BCF    03.5
-00A7:  BTFSS  06.1
-00A8:  CALL   06A
+0098:  MOVLW  04
+0099:  MOVWF  19
+009A:  MOVLW  FA
+009B:  MOVWF  1B
+009C:  CALL   056
+009D:  DECFSZ 19,F
+009E:  GOTO   09A
 ....................       output_low(PIN_A0); 
-00A9:  BSF    03.5
-00AA:  BCF    05.0
-00AB:  BCF    03.5
-00AC:  BCF    05.0
-....................       if(!input(pin_b1)) run_interrupt(); 
-00AD:  BSF    03.5
-00AE:  BSF    06.1
-00AF:  BCF    03.5
-00B0:  BTFSS  06.1
-00B1:  CALL   06A
+009F:  BSF    03.5
+00A0:  BCF    05.0
+00A1:  BCF    03.5
+00A2:  BCF    05.0
 ....................       delay_ms(1000); 
-00B2:  MOVLW  04
-00B3:  MOVWF  19
-00B4:  MOVLW  FA
-00B5:  MOVWF  1B
-00B6:  CALL   056
-00B7:  DECFSZ 19,F
-00B8:  GOTO   0B4
-00B9:  GOTO   08F
+00A3:  MOVLW  04
+00A4:  MOVWF  19
+00A5:  MOVLW  FA
+00A6:  MOVWF  1B
+00A7:  CALL   056
+00A8:  DECFSZ 19,F
+00A9:  GOTO   0A5
+00AA:  GOTO   092
 ....................        
 ....................    } 
 .................... } 
 ....................  
-00BA:  SLEEP
+00AB:  SLEEP
 
 Configuration Fuses:
    Word  1: 0001   XT NOWDT PUT PROTECT

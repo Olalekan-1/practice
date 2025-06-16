@@ -1,0 +1,20 @@
+#include <_rtcc.h>
+
+void main()
+{
+   
+   sys_init();
+  //hours.temp_hours = 4;
+   //store_hours();
+   //idle();
+  while(TRUE)
+  //set_days();
+   {
+     switch(menu_state) {
+       case 4:
+           set_days();
+         break;
+     
+    }
+   }
+}

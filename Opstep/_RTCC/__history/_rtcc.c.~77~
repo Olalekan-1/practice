@@ -1,0 +1,16 @@
+#include <_rtcc.h>
+
+void main(){
+   
+   sys_init();
+   //idle();
+  temp_seconds = 52;
+  store_seconds();
+  temp_seconds = read_seconds();
+  lcd_gotoxy(7, 1);
+  printf(lcd_putc, "%02d", temp_seconds);
+  
+  while(TRUE) {
+  //set_seconds();
+   }
+}

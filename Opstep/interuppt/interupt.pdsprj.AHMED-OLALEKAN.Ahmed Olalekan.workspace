@@ -16,7 +16,7 @@
      <ITEM name="Version">100</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="350" x="58" flags="00000032" y="145" h="200" pid="1" iid="-1">
+   <POPUP w="350" x="0" flags="00000032" y="574" h="200" pid="1" iid="-1">
     <PROPERTIES>
      <ITEM name="Address Column Width">85</ITEM>
      <ITEM name="AutoResize">No</ITEM>
@@ -66,7 +66,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="114" x="158" flags="00000008" y="245" h="127" pid="7" iid="3">
+   <POPUP w="114" x="715" flags="00000009" y="103" h="127" pid="7" iid="3">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="178" flags="00000002" y="265" h="8" pid="8" iid="3">
@@ -79,7 +79,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="600" x="198" flags="0000002a" y="285" h="400" pid="1" iid="3">
+   <POPUP w="600" x="0" flags="0000802b" y="114" h="400" pid="1" iid="3">
     <PROPERTIES>
      <ITEM name="CaseSensitive">No</ITEM>
      <ITEM name="DISPADDRS">Yes</ITEM>
@@ -90,7 +90,7 @@
      <ITEM name="nBreakpoints">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="300" x="218" flags="0000000a" y="305" h="300" pid="2" iid="3">
+   <POPUP w="409" x="1191" flags="0000000b" y="97" h="300" pid="2" iid="3">
     <PROPERTIES>
      <ITEM name="Address Column Width">96</ITEM>
      <ITEM name="AutoResize">No</ITEM>
@@ -99,9 +99,10 @@
      <ITEM name="ShowAddresses">Yes</ITEM>
      <ITEM name="ShowGlobals">Yes</ITEM>
      <ITEM name="ShowPreviousValues">No</ITEM>
-     <ITEM name="ShowTypes">No</ITEM>
+     <ITEM name="ShowTypes">Yes</ITEM>
      <ITEM name="ShowWatchPoint">No</ITEM>
      <ITEM name="TriggerMode">0</ITEM>
+     <ITEM name="Type Column Width">72</ITEM>
      <ITEM name="Value Column Width">96</ITEM>
      <ITEM name="Version">100</ITEM>
      <ITEM name="nItems">0</ITEM>

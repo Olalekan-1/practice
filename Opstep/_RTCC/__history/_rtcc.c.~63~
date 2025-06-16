@@ -1,0 +1,40 @@
+#include <_rtcc.h>
+
+void main(){
+   
+   sys_init();
+   //idle();
+  while(TRUE) {
+  switch(menu_state) {
+         case 0:
+            idle();
+            delay_ms(800);
+            idle();
+            break;
+         case 1:
+            set_seconds();
+            break;
+         case 2:
+            set_minutes();
+            break;
+         case 3:
+            set_hours();
+            break;
+         case 4:
+            set_days();
+            break;
+         case 5:
+            set_dates();
+            break;
+         case 6:
+            set_months();;
+            break;
+         case 7:
+            set_years();
+            break;
+          default:
+            menu_state = 0;
+            break;
+      }
+   }
+}

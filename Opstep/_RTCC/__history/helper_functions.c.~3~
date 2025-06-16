@@ -1,0 +1,15 @@
+#include "_rtcc.h"
+
+#include <stdio.h>
+
+unsigned int8 bcd_to_decimal(unsigned int8 bcd) {
+    int tens = (bcd >> 4) & 0x0F;
+    int units = bcd & 0x0F;
+    return tens * 10 + units;
+}
+
+unsigned int8 decimal_to_bcd(unsigned int8 decimal) {
+    unsigned int8 tens = decimal / 10;
+    unsigned int8 units = decimal % 10;
+    return (tens << 4) | units;
+}

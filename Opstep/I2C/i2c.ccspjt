@@ -1,0 +1,25 @@
+[PROJECT]
+Target=i2c.hex
+Processor_Text=PIC16F876A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=i2c.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\I2C\i2c]
+Type=4
+[mru-list]
+1=i2c.c
+[Opened Files]
+1=i2c.c
+2=i2c.h
+3=..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F876A.h
+4=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
+5=
+[i2c.c]
+Type=4
+[Units]
+Count=1
+1=i2c (main)

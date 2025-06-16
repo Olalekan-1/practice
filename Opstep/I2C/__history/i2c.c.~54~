@@ -1,0 +1,52 @@
+#include <i2c.h>
+
+void main()
+{
+
+   sys_init();
+
+   while(TRUE)
+   {
+   
+    y = read_eeprom(5);
+      
+    if(y == 255){
+      write_eeprom(5, 0);
+      delay_ms(100);
+      write_eeprom(0, 0);
+      delay_ms(100);
+      write_eeprom(1, 0);
+      delay_ms(100);
+     }
+     
+     
+    // temp = READ_ADC();
+    if(!input(STORE)){
+      while(!input(STORE));
+      temp = READ_ADC();
+      write_eeprom_i2c(temp);
+      
+      lcd_gotoxy(1, 1);
+      printf(lcd_putc, "%u" temp);
+      delay_ms(100);
+     }
+ 
+   
+   if(!input(RECALL)){
+      while(!input(RECALL));
+      unsigned int16 i = 0;
+      unsigned int8 high = 0, low = 0;
+      for(i = 0; i <= memory_location; i++){
+         high = make8(i, 1);
+         low = make8(i, 0);
+         temp = i2c_eeprom_read(high, low);
+         printf(lcd_putc, "%u" temp);
+         delay_ms(100);
+         lcd_putc('\f');
+          delay_ms(100);
+         
+      }
+   }
+
+}
+}

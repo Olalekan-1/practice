@@ -1,0 +1,34 @@
+#include "_rtcc.h"
+
+#include <stdio.h>
+
+unsigned int8 bcd_to_decimal(unsigned int8 bcd) {
+    int tens = (bcd >> 4) & 0x0F;
+    int units = bcd & 0x0F;
+    return tens * 10 + units;
+}
+
+unsigned int8 decimal_to_bcd(unsigned int8 decimal) {
+    unsigned int8 tens = decimal / 10;
+    unsigned int8 units = decimal % 10;
+    return (tens << 4) | units;
+}
+
+const char *day_of_the_week(unsigned int8 number){
+   const char *days[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+   return days[(number - 1)];
+}
+
+unsigned int8 read_register(unsigned int8 address){
+   unsigned int8 register_content = 0;
+   i2c_start();
+   i2c_write(D0);
+   i2c_write(address);
+   i2c_start();
+   i2c_write(D1);
+   register_content = i2c_read(0);
+   return register_content;
+}
+   
+
+}

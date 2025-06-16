@@ -6,13 +6,11 @@ void main()
    sys();
    while(TRUE)
    {
-      if(!input(pin_b1)) run_interrupt();
+      if(flag) run_interrupt();
+      
       output_high(PIN_A0);
-      if(!input(pin_b1)) run_interrupt();
       delay_ms(1000);
-      if(!input(pin_b1)) run_interrupt();
       output_low(PIN_A0);
-      if(!input(pin_b1)) run_interrupt();
       delay_ms(1000);
       
    }

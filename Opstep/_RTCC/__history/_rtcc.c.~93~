@@ -1,0 +1,47 @@
+#include <_rtcc.h>
+
+void main(){
+   
+   sys_init();
+   delay_ms(100);
+   idle();
+   while(TRUE) {
+  
+   lcd_gotoxy(1, 2);
+   printf(lcd_putc, "%02d:%02d:%2d %03s",  temp_dates, temp_months, temp_years, days.ch);
+   lcd_gotoxy(1, 1);
+   printf(lcd_putc, "%02d:%02d:%02d",  hours.temp_hours, temp_minutes, temp_seconds);
+  switch(menu_state) {
+         case 0:
+            idle();
+            delay_ms(800);
+            idle();
+            break;
+         case 1:
+            set_seconds();
+            break;
+         case 2:
+            set_minutes();
+            break;
+         case 3:
+            set_hours();
+            break;
+         case 4:
+            set_days();
+            break;
+         case 5:
+            set_dates();
+            break;
+         case 6:
+            set_months();;
+            break;
+         case 7:
+            set_years();
+            break;
+         case 8:
+           save();
+           menu_state = 0;
+             break;
+      }
+   }
+}

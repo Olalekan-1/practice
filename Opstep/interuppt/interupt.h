@@ -3,25 +3,29 @@
 #FUSES XT,NOWDT,PUT,PROTECT
 #use delay(crystal=4000000)
 
-unsigned int1 flag = TRUE;
+unsigned int1 flag = FALSE;
 
 void run_interrupt(void);
 
 #int_ext
 void isrext() {
-   flag = FALSE;
-   clear_interrupt(int_ext);
+   disable_interrupts(int_ext);
+   flag = TRUE;
+   // clear_interrupt(int_ext);
 }
 
 void run_interrupt(void){
 
-   flag = TRUE;
+   flag = FALSE;
    unsigned int8 y = 0;
    for(y = 0; y < 7; y++){
       output_high(pin_b7);
       delay_ms(500);
       output_low(pin_b7);
       delay_ms(500);
+      flag = TRUE;
+      clear_interrupt(int_ext);
+      enable_interrupts(int_ext);
    }
 }
 

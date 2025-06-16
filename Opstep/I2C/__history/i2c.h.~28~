@@ -1,0 +1,50 @@
+#include <16F876A.h>
+#use fast_io(a)
+#use fast_io(b)
+#use fast_io(c)
+#device ADC=8
+#FUSES XT, NOWDT, PUT, NOBROWNOUT, NOLVP, CPD, NODEBUG
+#use delay(crystal=4000000)
+
+unsigned int8 temp = 0;
+
+#define LCD_DATA_PORT getenv("SFR:PORTb")
+#define LCD_ENABLE_PIN  PIN_b3                              
+#define LCD_RS_PIN      PIN_b1                                   
+#define LCD_RW_PIN      PIN_b2                                    
+#define LCD_DATA4       PIN_b4                                    
+#define LCD_DATA5       PIN_b5                                    ////
+#define LCD_DATA6       PIN_b6                                    ////
+#define LCD_DATA7       PIN_b7                                    ////
+#include <lcd.c>
+
+
+
+
+
+
+void sys_init(){
+   output_a(0);
+   output_b(0);
+   output_c(0);
+   set_tris_a(0b111111);
+   set_tris_b(0);
+   set_tris_c(0);
+   output_a(0);
+   output_b(0);
+   output_c(0);
+   
+   SETUP_ADC(ADC_CLOCK_INTERNAL);
+   SETUP_ADC_PORTS(AN0_AN1_VSS_VREF);
+   SET_ADC_CHANNEL(0);
+   delay_ms(100);
+   
+   lcd_init();
+   lcd_putc('\f');
+   
+}
+
+void lcd_line(int8 line){
+
+   lcd_gotoxy(1,line);
+}

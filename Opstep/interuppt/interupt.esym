@@ -1,8 +1,7 @@
-d G "INT_TIMER0" 2 401 "0x000B20"
 D G "__PCM__" 0 22 ""5.015""
 D G "__DEVICE__" 0 22 "84"
-D G "__DATE__" 0 22 ""25-May-25""
-D G "__TIME__" 0 22 ""15:52:43"" "Standard Header file for the PIC16F84A device ////////////////"
+D G "__DATE__" 0 22 ""06-Jun-25""
+D G "__TIME__" 0 22 ""22:04:34"" "Standard Header file for the PIC16F84A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 35 "int8" `53 
 f B "set_tris_a" 2 35 "void(int8 value)" `52 
@@ -123,9 +122,9 @@ c L "restart_wdt" 2 3 3 "FUNCTION"
 v L "x" 2 172 "sint8" `101 
 f B "abs" 2 172 "sint8(sint8 x)" `100 
 v L "x" 2 173 "sint16" `103 
-f G "abs" 2 173 "sint16(sint16 x)" `102 
+f B "abs" 2 173 "sint16(sint16 x)" `102 
 v L "x" 2 174 "sint32" `105 
-f G "abs" 2 174 "sint32(sint32 x)" `104 
+f B "abs" 2 174 "sint32(sint32 x)" `104 
 v L "x" 2 175 "float" `107 
 f G "abs" 2 175 "float(float x)" `106 
 v L "??65535" 2 176 "int8" `109 
@@ -133,13 +132,13 @@ v L "??65535" 2 176 "int8" `110
 f B "_mul" 2 176 "int16(int8 ,int8 )" `108 
 v L "??65535" 2 177 "sint8" `109 
 v L "??65535" 2 177 "sint8" `113 
-f G "_mul" 2 177 "sint16(sint8 ,sint8 )" `111 
+f B "_mul" 2 177 "sint16(sint8 ,sint8 )" `111 
 v L "??65535" 2 178 "int16" `109 
 v L "??65535" 2 178 "int16" `116 
 f G "_mul" 2 178 "int32(int16 ,int16 )" `114 
 v L "??65535" 2 179 "sint16" `109 
 v L "??65535" 2 179 "sint16" `119 
-f G "_mul" 2 179 "sint32(sint16 ,sint16 )" `117  "Memory Manipulation Prototypes:"
+f B "_mul" 2 179 "sint32(sint16 ,sint16 )" `117  "Memory Manipulation Prototypes:"
 v L "bank" 2 182 "int8" `121 
 v L "offset" 2 182 "int8" `122 
 f B "read_bank" 2 182 "int8(int8 bank,int8 offset)" `120 
@@ -247,7 +246,7 @@ v L "bit" 2 218 "int8" `225
 f G "bit_clear" 2 218 "void(int16 var,int8 bit)" `223 
 v L "var" 2 219 "int32" `221 
 v L "bit" 2 219 "int8" `228 
-f G "bit_clear" 2 219 "void(int32 var,int8 bit)" `226 
+f B "bit_clear" 2 219 "void(int32 var,int8 bit)" `226 
 v L "var" 2 220 "int8" `230 
 v L "bit" 2 220 "int8" `231 
 f B "bit_test" 2 220 "int8(int8 var,int8 bit)" `229 
@@ -280,7 +279,7 @@ v L "string" 2 236 "*int8" `258
 f B "gets" 2 236 "void(*int8 string)" `257 
 v L "string" 2 237 "*int8" `260 
 v L "stream" 2 237 "int8" `261 
-f G "gets" 2 237 "void(*int8 string,int8 stream)" `259 
+f B "gets" 2 237 "void(*int8 string,int8 stream)" `259 
 f B "kbhit" 2 238 "int8()" `262 
 v L "stream" 2 239 "int8" `264 
 f G "kbhit" 2 239 "int8(int8 stream)" `263 
@@ -323,7 +322,7 @@ v L "restart" 2 261 "int8" `303
 f G "i2c_start" 2 261 "void(int8 stream,int8 restart)" `301 
 f B "i2c_stop" 2 262 "void()" `304 
 v L "stream" 2 263 "int8" `306 
-f G "i2c_stop" 2 263 "void(int8 stream)" `305 
+f B "i2c_stop" 2 263 "void(int8 stream)" `305 
 f B "i2c_isr_state" 2 264 "int8()" `307 
 v L "addr" 2 265 "int8" `309 
 f B "i2c_slaveaddr" 2 265 "void(int8 addr)" `308 
@@ -332,7 +331,7 @@ v L "addr" 2 266 "int8" `312
 f G "i2c_slaveaddr" 2 266 "void(int8 stream,int8 addr)" `310 
 f B "i2c_poll" 2 267 "int8()" `313 
 v L "stream" 2 268 "int8" `315 
-f G "i2c_poll" 2 268 "int8(int8 stream)" `314 
+f B "i2c_poll" 2 268 "int8(int8 stream)" `314 
 v L "baud" 2 269 "int32" `317 
 f B "i2c_init" 2 269 "void(int32 baud)" `316 
 v L "stream" 2 270 "int8" `319 
@@ -340,7 +339,7 @@ v L "baud" 2 270 "int32" `320
 f G "i2c_init" 2 270 "void(int8 stream,int32 baud)" `318  "#use spi() Prototypes:"
 f B "spi_xfer" 2 273 "int8()" `321 
 f G "spi_xfer" 2 274 "int16()" `322 
-f G "spi_xfer" 2 275 "int32()" `323 
+f B "spi_xfer" 2 275 "int32()" `323 
 v L "data" 2 276 "int8" `325 
 f G "spi_xfer" 2 276 "int8(int8 data)" `324 
 v L "data" 2 277 "int16" `327 
@@ -359,7 +358,7 @@ f G "spi_xfer" 2 281 "int32(int8 stream,int32 data)" `336
 v L "stream" 2 282 "int8" `340 
 v L "data" 2 282 "int8" `341 
 v L "bits" 2 282 "int8" `342 
-f G "spi_xfer" 2 282 "int8(int8 stream,int8 data,int8 bits)" `339 
+f B "spi_xfer" 2 282 "int8(int8 stream,int8 data,int8 bits)" `339 
 v L "stream" 2 283 "int8" `340 
 v L "data" 2 283 "int16" `341 
 v L "bits" 2 283 "int8" `346 
@@ -367,17 +366,17 @@ f G "spi_xfer" 2 283 "int16(int8 stream,int16 data,int8 bits)" `343
 v L "stream" 2 284 "int8" `340 
 v L "data" 2 284 "int32" `341 
 v L "bits" 2 284 "int8" `350 
-f G "spi_xfer" 2 284 "int32(int8 stream,int32 data,int8 bits)" `347 
+f B "spi_xfer" 2 284 "int32(int8 stream,int32 data,int8 bits)" `347 
 v L "baud" 2 285 "int32" `352 
 f B "spi_init" 2 285 "void(int32 baud)" `351 
 v L "stream" 2 286 "int8" `354 
 v L "baud" 2 286 "int32" `355 
-f G "spi_init" 2 286 "void(int8 stream,int32 baud)" `353 
+f B "spi_init" 2 286 "void(int8 stream,int32 baud)" `353 
 v L "baud" 2 287 "int32" `357 
 f B "spi_speed" 2 287 "void(int32 baud)" `356 
 v L "stream" 2 288 "int8" `359 
 v L "baud" 2 288 "int32" `360 
-f G "spi_speed" 2 288 "void(int8 stream,int32 baud)" `358 
+f B "spi_speed" 2 288 "void(int8 stream,int32 baud)" `358 
 v L "stream" 2 289 "int8" `362 
 v L "baud" 2 289 "int32" `363 
 v L "clock" 2 289 "int32" `364 
@@ -387,7 +386,7 @@ f B "spi_prewrite" 2 290 "void(int8 data)" `365
 v L "data" 2 291 "int16" `368 
 f G "spi_prewrite" 2 291 "void(int16 data)" `367 
 v L "data" 2 292 "int32" `370 
-f G "spi_prewrite" 2 292 "void(int32 data)" `369 
+f B "spi_prewrite" 2 292 "void(int32 data)" `369 
 v L "??65535" 2 293 "int8" `372 
 v L "data" 2 293 "int8" `373 
 f G "spi_prewrite" 2 293 "void(int8 ,int8 data)" `371 
@@ -401,17 +400,17 @@ f B "spi_xfer_in" 2 296 "int8()" `380
 f G "spi_xfer_in" 2 297 "int16()" `381 
 f G "spi_xfer_in" 2 298 "int32()" `382 
 v L "bits" 2 299 "int8" `384 
-f G "spi_xfer_in" 2 299 "int8(int8 bits)" `383 
+f B "spi_xfer_in" 2 299 "int8(int8 bits)" `383 
 v L "bits" 2 300 "int8" `386 
 f G "spi_xfer_in" 2 300 "int16(int8 bits)" `385 
 v L "bits" 2 301 "int8" `388 
 f G "spi_xfer_in" 2 301 "int32(int8 bits)" `387 
 v L "stream" 2 302 "int8" `390 
 v L "bits" 2 302 "int8" `391 
-f G "spi_xfer_in" 2 302 "int8(int8 stream,int8 bits)" `389 
+f B "spi_xfer_in" 2 302 "int8(int8 stream,int8 bits)" `389 
 v L "stream" 2 303 "int8" `390 
 v L "bits" 2 303 "int8" `394 
-f G "spi_xfer_in" 2 303 "int16(int8 stream,int8 bits)" `392 
+f B "spi_xfer_in" 2 303 "int16(int8 stream,int8 bits)" `392 
 v L "stream" 2 304 "int8" `390 
 v L "bits" 2 304 "int8" `397 
 f G "spi_xfer_in" 2 304 "int32(int8 stream,int8 bits)" `395  "#use rtos() Prototypes:"
@@ -455,7 +454,7 @@ v L "value" 2 330 "int32" `435
 f G "set_ticks" 2 330 "void(int32 value)" `434 
 v L "stream" 2 331 "int8" `437 
 v L "value" 2 331 "int8" `438 
-f G "set_ticks" 2 331 "void(int8 stream,int8 value)" `436 
+f B "set_ticks" 2 331 "void(int8 stream,int8 value)" `436 
 v L "stream" 2 332 "int8" `437 
 v L "value" 2 332 "int16" `441 
 f G "set_ticks" 2 332 "void(int8 stream,int16 value)" `439 
@@ -528,11 +527,12 @@ d G "INT_EEPROM" 2 400 "0x000B40"
 d G "INT_TIMER0" 2 401 "0x000B20"
 V G "flag" 1 6 "int1" `501 
 f G "run_interrupt" 1 8 "void()" `502 
-F G "isrext" 1 11 "void()" `503 
-F G "run_interrupt" 1 16 "void()" `502 
-V L "y" 1 19 "int8" `504 
-F G "sys" 1 28 "void()" `505 
-F G "MAIN" 0 5 "void()" `506 
+F B "isrext" 1 11 "void()" `503 
+C L "isrext" 1 14 1 "FUNCTION"
+F G "run_interrupt" 1 17 "void()" `502 
+V L "y" 1 20 "int8" `504 
+F G "sys" 1 32 "void()" `505 
+F B "MAIN" 0 5 "void()" `506 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

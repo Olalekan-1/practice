@@ -1,0 +1,236 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @TRIS_C
+028-02E hours
+02F-031 days
+032     temp_seconds
+033     temp_minutes
+034     var
+035     var2
+036     temp_dates
+037     temp_months
+038     temp_years
+039     menu_state
+03A     day_of_the_weeks.number
+03A     @PRINTF_D0_649.P1
+03A     lcd_init.i
+03A     @PRINTF_D_649.P1
+03A     store_hours.hour_12
+03A     set_seconds.@SCRATCH1
+03A     set_minutes.@SCRATCH1
+03A     set_hours.@SCRATCH1
+03A     @PSTRINGR_649.@SCRATCH1
+03A     set_days.@SCRATCH1
+03A     set_dates.@SCRATCH1
+03A     set_months.@SCRATCH1
+03A     set_years.@SCRATCH1
+03A     IDLE.@SCRATCH1
+03A     MAIN.@SCRATCH1
+03B-03E lcd_init.LCD_INIT_STRING
+03B-048 day_of_the_weeks.days
+03B     @PRINTF_D_649.P1
+03B     @PRINTF_D0_649.P2
+03B     store_register.address
+03B     decimal_to_bcd.decimal
+03B     store_hours.@SCRATCH1
+03B     set_hours.@SCRATCH2
+03B     @PSTRINGR_649.@SCRATCH2
+03B     IDLE.@SCRATCH2
+03C     decimal_to_bcd.tens
+03C     store_register.register_content
+03C     @PRINTF_D0_649.@SCRATCH1
+03C     set_hours.@SCRATCH3
+03C     IDLE.@SCRATCH3
+03C     @PRINTF_D_649.@SCRATCH1
+03D     decimal_to_bcd.units
+03D     @PRINTF_D0_649.@SCRATCH2
+03D     set_hours.@SCRATCH4
+03D     IDLE.@SCRATCH4
+03D     @PRINTF_D_649.@SCRATCH2
+03E     decimal_to_bcd.@SCRATCH1
+03E     @PRINTF_D0_649.@SCRATCH3
+03E     @PRINTF_D_649.@SCRATCH3
+03F     lcd_init.@SCRATCH1
+03F     @PRINTF_D0_649.@SCRATCH4
+03F     @PRINTF_D_649.@SCRATCH4
+040     @DIV88.P1
+040     lcd_putc.c
+040     read_hours.hour_12
+041     lcd_gotoxy.x
+041     read_hours.hour_24
+041     @DIV88.P1
+042     lcd_gotoxy.y
+042     read_register.address
+042     set_am_pm.value
+042     bcd_to_decimal.bcd
+042     @DIV88.@SCRATCH1
+042     read_hours.@SCRATCH1
+043     bcd_to_decimal.tens
+043     read_register.register_content
+043     lcd_gotoxy.address
+043     set_am_pm.@SCRATCH1
+044     @I2C_WRITE_1.P1
+044     bcd_to_decimal.units
+044     @delay_ms1.P1
+044     @I2C_READ_1.P2
+044     lcd_gotoxy.@SCRATCH1
+044     set_am_pm.@SCRATCH2
+045     @MUL88.P1
+045     lcd_send_byte.address
+045     @I2C_READ_1.@SCRATCH1
+045     bcd_to_decimal.@SCRATCH1
+046     @MUL88.P1
+046     lcd_send_byte.n
+046     @I2C_READ_1.@SCRATCH2
+047     lcd_read_byte.low
+047     lcd_send_byte.@SCRATCH1
+048     lcd_read_byte.high
+048     lcd_send_nibble.n
+049-064 day_of_the_weeks.@days
+049     lcd_read_nibble.n
+049     lcd_read_byte.@SCRATCH1
+04A     lcd_read_nibble.@SCRATCH1
+065     day_of_the_weeks.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07F     @INTERRUPT_AREA
+09C.6   C1OUT
+09C.7   C2OUT
+0FF     @INTERRUPT_AREA
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+17F     @INTERRUPT_AREA
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+2FF     @INTERRUPT_AREA
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+47F     @INTERRUPT_AREA
+4FF     @INTERRUPT_AREA
+57F     @INTERRUPT_AREA
+5FF     @INTERRUPT_AREA
+67F     @INTERRUPT_AREA
+6FF     @INTERRUPT_AREA
+77F     @INTERRUPT_AREA
+7FF     @INTERRUPT_AREA
+87F     @INTERRUPT_AREA
+8FF     @INTERRUPT_AREA
+97F     @INTERRUPT_AREA
+9FF     @INTERRUPT_AREA
+A7F     @INTERRUPT_AREA
+AFF     @INTERRUPT_AREA
+B7F     @INTERRUPT_AREA
+BFF     @INTERRUPT_AREA
+C7F     @INTERRUPT_AREA
+CFF     @INTERRUPT_AREA
+D7F     @INTERRUPT_AREA
+DFF     @INTERRUPT_AREA
+E7F     @INTERRUPT_AREA
+EFF     @INTERRUPT_AREA
+F7F     @INTERRUPT_AREA
+FFF     @INTERRUPT_AREA
+
+ROM Allocation:
+00002F  @const705.call
+000036  @const713.call
+00003D  @const714.call
+000044  isrext
+00004E  @delay_ms1
+000063  lcd_send_nibble
+00007C  lcd_read_nibble
+0000A1  lcd_send_byte
+0000A7  lcd_read_byte
+0000E4  lcd_gotoxy
+0000F6  lcd_putc
+000122  sys_init
+000130  lcd_init
+000179  @I2C_WRITE_1
+0001C3  read_register
+0001F1  @I2C_READ_1
+00024E  bcd_to_decimal
+00025C  @MUL88
+000284  read_seconds
+000291  read_minutes
+00029F  set_am_pm
+0002C3  read_hours
+0002F4  day_of_the_weeks
+00034A  read_days
+000364  read_months
+000373  read_dates
+000382  read_years
+00038F  @DIV88
+0003A4  @PRINTF_D0_649
+0003FB  @PSTRINGR_649
+000411  @PRINTF_D_649
+000468  IDLE
+0004E4  set_seconds
+000526  set_minutes
+00056A  set_hours
+00063A  set_days
+000695  set_dates
+0006DB  set_months
+000721  set_years
+000765  store_register
+00078F  decimal_to_bcd
+00079E  save
+000806  store_minutes
+000815  store_hours
+00083A  store_days
+00084A  store_dates
+00085A  store_months
+00086A  store_years
+000878  store_seconds
+000889  @cinit1
+000889  MAIN
+00089D  @cinit2
+000943  @goto11173
+
+Project Directory:
+    C:\Users\Ahmed Olalekan\Desktop\practice\Opstep\_RTCC\
+
+Project Files:
+    _rtcc.c                                                 [16-Jun-25 16:59  CRC=2446509E]
+    _rtcc.h                                                 [16-Jun-25 17:03  CRC=7BC64522]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F876A.h [12-Nov-13 14:35  CRC=7FE1E080]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [19-Sep-13 15:38  CRC=D1A6378A]
+
+Source signature=C33AE554
+
+Units:
+    _rtcc (main)
+
+Compiler Settings:
+    Processor:      PIC16F876A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   _rtcc.xsym
+    Errors:      _rtcc.err
+    Ext Symbols: _rtcc.esym
+    INHX8:       _rtcc.hex
+    Symbols:     _rtcc.sym
+    List:        _rtcc.lst
+    Debug/COFF:  _rtcc.cof
+    Project:     _rtcc.ccspjt
+    Call Tree:   _rtcc.tre
+    Statistics:  _rtcc.STA

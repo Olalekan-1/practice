@@ -1,0 +1,593 @@
+#ifndef _RTCC_H
+#define _RTCC_H
+
+
+#include <16F876A.h>
+
+#use i2c(master, sda=pin_c4, scl=pin_c3, FAST)
+#use fast_io(a)
+#use fast_io(b)
+#use fast_io(c)
+#FUSES XT, NOWDT, PUT, NOBROWNOUT, NOLVP, CPD, NODEBUG, PROTECT
+#use delay(crystal=4000000)
+
+
+typedef struct hour {
+   unsigned int8 temp_hours;
+   unsigned int8 am_pm;
+   unsigned int8 hour_mode;
+   char ch[4];
+} hour;
+
+hour hours;
+
+typedef struct day {
+   unsigned int8 temp_days;
+   char *ch;
+} day;
+
+day days;
+
+
+unsigned int8 temp_seconds = 0;
+unsigned int8 temp_minutes = 0;
+unsigned int8 var = 0, var2 = 0;
+unsigned int8 temp_dates = 0;
+unsigned int8 temp_months = 0;
+unsigned int8 temp_years = 0;
+
+
+
+#define MENU input(pin_a3)
+#define INC input(pin_a4)
+#define DEC input(pin_a5)
+
+#define LCD_DATA_PORT getenv("SFR:PORTb")
+#define LCD_ENABLE_PIN  PIN_b3                              
+#define LCD_RS_PIN      PIN_b1                                   
+#define LCD_RW_PIN      PIN_b2                                    
+#define LCD_DATA4       PIN_b4                                    
+#define LCD_DATA5       PIN_b5
+#define LCD_DATA6       PIN_b6   
+#define LCD_DATA7       PIN_b7
+#include <lcd.c>
+
+
+enum MenuState {
+   IDLE = 0,
+   SET_SECOND,
+   SET_MINUTE,
+   SET_HOUR,
+   SET_DAY,
+   SET_DATE,
+   SET_MONTH,
+   SET_YEAR,
+   SAVE_AND_EXIT
+};
+
+volatile enum MenuState menu_state = IDLE;
+
+// Interrupt service routine
+
+#int_ext
+void isrext() {       
+   menu_state++;
+   if (menu_state > SAVE_AND_EXIT)
+      menu_state = IDLE;
+   clear_interrupt(INT_EXT);  
+}
+
+void sys_init(){
+   output_a(0);
+   output_b(0);
+   output_c(0);
+   set_tris_a(0b111111);
+   set_tris_b(0x01);
+   set_tris_c(0);
+   output_a(0);
+   output_b(0);
+   output_c(0);
+   
+   lcd_init();
+   lcd_putc('\f');
+   
+   ext_int_edge(L_TO_H);
+   clear_interrupt(INT_EXT);
+   enable_interrupts(INT_EXT);
+   enable_interrupts(GLOBAL);
+}
+
+
+  
+// Helper functions 
+
+unsigned int8 bcd_to_decimal(unsigned int8 bcd) {
+    int tens = (bcd >> 4) & 0x0F;
+    int units = bcd & 0x0F;
+    return tens * 10 + units;
+}
+
+unsigned int8 decimal_to_bcd(unsigned int8 decimal) {
+    unsigned int8 tens = decimal / 10;
+    unsigned int8 units = decimal % 10;
+    return (tens << 4) | units;
+}
+
+char *day_of_the_weeks(unsigned int8 number){
+   char *days[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+   return days[(number - 1)];
+}
+
+unsigned int8 read_register(unsigned int8 address){
+   unsigned int8 register_content = 0;
+   delay_ms(100);
+   i2c_start();
+   i2c_write(0xD0);
+   i2c_write(address);
+   i2c_start();
+   i2c_write(0xD1);
+   register_content = i2c_read(0);
+   i2c_stop();
+   delay_us(100);
+   return register_content;
+}
+
+void store_register(unsigned int8 address, unsigned int8 register_content){
+
+   i2c_start();
+   i2c_write(0xD0);
+   i2c_write(address);
+   i2c_write(register_content);
+   i2c_stop();
+   delay_ms(20);
+
+}
+
+// Seconds functions
+
+unsigned int8 read_seconds(void){
+
+   temp_seconds = read_register(0x00);
+   temp_seconds &= 0x7F;
+   temp_seconds = bcd_to_decimal(temp_seconds);
+   return temp_seconds;
+}
+
+void store_seconds(void){
+   temp_seconds = decimal_to_bcd(temp_seconds);
+   temp_seconds &= 0x7F;
+   store_register(0x00, temp_seconds);
+}
+
+
+void set_seconds(void){
+   temp_seconds = read_seconds();
+   while(menu_state == SET_SECOND){
+      lcd_gotoxy(7, 1);
+      printf(lcd_putc, "%02d", temp_seconds);
+      delay_ms(300);
+      lcd_gotoxy(7, 1);
+      printf(lcd_putc, "  ");
+      delay_ms(300);
+      // continue;
+      if(INC){
+         while(INC);
+         temp_seconds++;
+         if(temp_seconds > 59) temp_seconds = 0;
+         temp_seconds = temp_seconds;
+         continue;
+      }
+         
+      else if(DEC){
+         while(DEC);
+         if(temp_seconds == 0) temp_seconds = 60;
+         temp_seconds--;
+          temp_seconds = temp_seconds;
+         continue;
+      }
+      
+      }
+}
+
+// minutes functions
+
+unsigned int read_minutes(void){
+   temp_minutes = read_register(0x01);
+   temp_minutes &=0x7F;
+   temp_minutes = bcd_to_decimal(temp_minutes);
+   return temp_minutes;
+}
+
+void store_minutes(void){
+   temp_minutes = decimal_to_bcd(temp_minutes);
+   temp_minutes &=0x7F;
+   store_register(0x01, temp_minutes);
+}
+
+void set_minutes(void){
+   temp_minutes =  read_minutes();
+   while(menu_state == SET_MINUTE){
+      lcd_gotoxy(4, 1);
+      printf(lcd_putc, "%02d", temp_minutes);
+      delay_ms(300);
+      lcd_gotoxy(4, 1);
+      printf(lcd_putc, "  ");
+      delay_ms(300);
+      if(INC){
+         while(INC);
+         temp_minutes++;
+         if(temp_minutes > 59) temp_minutes = 0;
+         temp_minutes = temp_minutes;
+         continue;
+      }
+         
+      else if(DEC){
+         while(DEC);
+         if(temp_minutes == 0) temp_minutes = 60;
+         temp_minutes--;
+         temp_minutes = temp_minutes;
+         continue;
+      }
+      
+      }
+}
+
+
+// Hours function
+
+void set_am_pm(unsigned int8 value){
+   
+   if(value == 0x01){
+    hours.ch = "PM";
+   }
+   else hours.ch = "AM";
+}
+
+
+hour read_hours(void){
+   
+   unsigned int8 hour_12 = 0;
+   unsigned int8 hour_24 = 0;
+
+   hours.temp_hours = read_register(0x02);
+   hours.hour_mode = (hours.temp_hours >> 6) & 0x01;
+   hours.am_pm = (hours.temp_hours >> 5) & 0x01;
+   hour_12 = (hours.temp_hours & 0x1F);
+   hour_24 = hours.temp_hours & 0x3F;
+   
+   if(hours.hour_mode == 0x01){
+      set_am_pm(hours.am_pm);
+      hours.temp_hours = bcd_to_decimal(hour_12);
+   }
+   hours.temp_hours = bcd_to_decimal(hour_24); 
+   return hours;
+}
+
+void store_hours(void){
+
+   unsigned int8 hour_12 = 0;
+   hours.temp_hours = decimal_to_bcd(hours.temp_hours);
+   
+   hour_12 = (hours.temp_hours >> 6) & 0x01;
+   if(hour_12 == 0x01){
+      hours.temp_hours |= (hours.am_pm << 5);
+      hours.temp_hours &= 0x7F;
+   }
+   else hours.temp_hours &= 0x3F;
+   store_register(0x02, hours.temp_hours);
+}
+
+
+void set_hours(void){
+      hours = read_hours();
+      while(menu_state == SET_HOUR){
+         lcd_gotoxy(1, 1);
+         printf(lcd_putc, "%02d", hours.temp_hours);
+         set_am_pm(hours.am_pm);
+         if(hours.hour_mode == 0x00) strcpy(hours.ch,  "  ");
+         lcd_gotoxy(10, 1);
+         printf(lcd_putc, "%s", &hours.ch);
+         delay_ms(300);
+         lcd_gotoxy(1, 1);
+         printf(lcd_putc, "  ");
+         delay_ms(300);
+      
+         if(INC){
+            while(INC);
+            hours.temp_hours++;
+            if(hours.hour_mode == 0x00){  // Check if the 12 hour mode is selected: 0x00 means the clock is in 24 hour mode.
+               if(hours.temp_hours > 23){
+                  hours.temp_hours = 1;
+                  set_am_pm(hours.am_pm);
+                  hours.hour_mode ^= 0x01;
+               }
+               hours.temp_hours = hours.temp_hours;
+               continue;
+            }
+         
+            else if(hours.hour_mode == 0x01){
+               if(hours.am_pm == 0x01){
+               hours.temp_hours = hours.temp_hours;
+               if(hours.temp_hours == 12){
+                 hours.hour_mode ^= 0x01;
+                 hours.temp_hours = 0;
+                 hours.am_pm ^= 0x01;
+               }
+               continue;
+               
+               }
+            
+               hours.temp_hours = hours.temp_hours;
+               hours.am_pm = 0x00;
+               if(hours.temp_hours == 12){
+                 hours.am_pm ^= 0x01;
+                 hours.temp_hours = 1;
+               }
+               continue;
+            }
+            
+         }
+      
+         if(DEC){
+            while(DEC);
+            hours.temp_hours--;
+            if(hours.hour_mode == 0x00){  // Check if the 12 hour mode is selected: 0x00 means the clock is in 24 hour mode.
+              hours.temp_hours = hours.temp_hours;
+              if(hours.temp_hours == 0){
+                  hours.temp_hours = 0;
+                  set_am_pm(hours.am_pm);
+                  hours.hour_mode ^= 0x01;
+               }
+               continue;
+            }
+         
+            else if(hours.hour_mode == 0x01){
+               if(hours.am_pm == 0x01){
+               hours.temp_hours = hours.temp_hours;
+               if(hours.temp_hours == 0){
+                 hours.hour_mode ^= 0x01;
+                 hours.temp_hours = 23;
+                 hours.am_pm ^= 0x01;
+               }
+               continue;
+               
+               }
+            
+               var2 = var;
+               var = hours.temp_hours;
+               var = var2;
+               hours.am_pm = 0x00;
+               if(var == 12){
+                 hours.am_pm ^= 0x01;
+                 hours.temp_hours = 12;
+               }
+               else if(var < 12){
+               hours.temp_hours = var + 1;
+               var = hours.temp_hours;
+               }
+               continue;
+         }
+
+            
+         }
+      
+   }
+}
+
+
+//  Days function
+day read_days(void){
+
+   days.temp_days = read_register(0x03);
+   days.temp_days &= 0x07;
+   days.temp_days = bcd_to_decimal(days.temp_days);
+   days.ch = day_of_the_weeks(days.temp_days);
+   return days;
+}
+
+void store_days(void){
+
+   days.temp_days = decimal_to_bcd(days.temp_days);
+   days.temp_days &= 0x07;
+   store_register(0x03, days.temp_days);  
+}
+
+void set_days(void){
+   days =  read_days();
+   while(menu_state == SET_DAY){
+      lcd_gotoxy(10, 2);
+      printf(lcd_putc, "%s", days.ch);
+      delay_ms(300);
+      lcd_gotoxy(10, 2);
+      printf(lcd_putc, "   ");
+      delay_ms(300);
+      if(INC){
+         while(INC);
+         days.temp_days++;
+         if(days.temp_days > 7) days.temp_days = 1;
+         days.ch = day_of_the_weeks(days.temp_days);
+         continue;
+      }
+         
+      else if(DEC){
+         while(DEC);
+         if(days.temp_days == 1) days.temp_days = 8;
+         days.temp_days--;
+         days.ch = day_of_the_weeks(days.temp_days);
+         continue;
+      }
+      
+      }
+}
+
+// Dates functions
+unsigned int8 read_dates(void){
+
+   temp_dates = read_register(0x04);
+   temp_dates &= 0x3F;
+   temp_dates = bcd_to_decimal(temp_dates);
+   return temp_dates;
+}
+
+void store_dates(void){
+   temp_dates = decimal_to_bcd(temp_dates);
+   temp_dates &= 0x3F;
+   store_register(0x04, temp_dates);
+}
+
+
+void set_dates(void){
+   temp_dates = read_dates();
+   while(menu_state == SET_DATE){
+      lcd_gotoxy(1, 2);
+      printf(lcd_putc, "%02d", temp_dates);
+      delay_ms(300);
+      lcd_gotoxy(1, 2);
+      printf(lcd_putc, "  ");
+      delay_ms(300);
+      // continue;
+      if(INC){
+         while(INC);
+         temp_dates++;
+         if(temp_dates > 32) temp_dates = 1;
+         temp_dates = temp_dates;
+         continue;
+      }
+         
+      else if(DEC){
+         while(DEC);
+         if(temp_dates == 0) temp_dates = 32;
+         temp_dates--;
+         temp_dates = temp_dates;
+         continue;
+      }
+      
+      }
+}
+
+// months function
+
+unsigned int8 read_months(void){
+
+   temp_months = read_register(0x05);
+   temp_months &= 0x1F;
+   temp_months = bcd_to_decimal(temp_months);
+   return temp_months;
+}
+
+void store_months(void){
+
+   temp_months = decimal_to_bcd(temp_months);
+   temp_months &= 0x1F;
+   store_register(0x05, temp_months);
+}
+
+
+void set_months(void){
+    temp_months = read_months();
+   while(menu_state == SET_MONTH){
+      lcd_gotoxy(4, 2);
+      printf(lcd_putc, "%02d",  temp_months);
+      delay_ms(300);
+      lcd_gotoxy(4, 2);
+      printf(lcd_putc, "  ");
+      delay_ms(300);
+      // continue;
+      if(INC){
+         while(INC);
+         temp_months++;
+         if(temp_months > 12)  temp_months = 1;
+          temp_months = temp_months;
+         continue;
+      }
+         
+      else if(DEC){
+         while(DEC);
+         if(temp_months == 0)  temp_months = 12;
+         temp_months--;
+         temp_months =  temp_months;
+         continue;
+      }
+      
+      }
+}
+
+
+// years functions
+
+unsigned int8 read_years(void){
+
+   temp_years = read_register(0x06);
+   temp_months &= 0xFF;
+   temp_years = bcd_to_decimal(temp_years);
+   return temp_years;
+}
+
+void store_years(void){
+
+   temp_years = decimal_to_bcd(temp_years);
+   temp_years &= 0xFF;
+   store_register(0x06, temp_years);
+}
+
+
+void set_years(void){
+    temp_years = read_years();
+   while(menu_state == SET_YEAR){
+      lcd_gotoxy(7, 2);
+      printf(lcd_putc, "%02d",  temp_years);
+      delay_ms(300);
+      lcd_gotoxy(7, 2);
+      printf(lcd_putc, "  ");
+      delay_ms(300);
+      // continue;
+      if(INC){
+         while(INC);
+         temp_years++;
+         if(temp_years > 99)  temp_years = 0;
+          temp_years = temp_years;
+         continue;
+      }
+         
+      else if(DEC){
+         while(DEC);
+         if(temp_years == 0) temp_years = 100;
+         temp_years--;
+         temp_years =  temp_years;
+         continue;
+      }
+      
+      }
+}
+
+
+void idle(void){
+   temp_seconds = read_seconds();
+   temp_minutes = read_minutes();
+   hours = read_hours();
+   days = read_days();
+   temp_months = read_months();
+   temp_dates = read_dates();
+   temp_years = read_years();
+   
+   lcd_gotoxy(1, 1);
+   printf(lcd_putc, "%02d:%02d:%02d %s",  hours.temp_hours, temp_minutes, temp_seconds, hours.ch);
+   lcd_gotoxy(1, 2);
+   printf(lcd_putc, "%02d:%02d:%2d %03s",  temp_dates, temp_months, temp_years, days.ch);  
+}
+
+
+// confirm and save function
+void save(void){
+
+   store_register(0x00, 0b10000000);
+   store_minutes();
+   store_hours();
+   store_days();
+   store_dates();
+   store_months();
+   store_years();
+   store_seconds();
+}
+
+#endif
